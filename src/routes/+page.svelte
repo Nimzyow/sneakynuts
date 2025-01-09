@@ -36,7 +36,8 @@
     color: #ffffff;
     font-size: 2.5rem;
     font-weight: bold;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", sans-serif;
+    font-style: normal;
     margin-bottom: 0;
   }
 
