@@ -41,7 +41,7 @@
   }
 
   .custom-image {
-    width: 200px;
+    width: 100px;
     height: auto;
     margin: 0;
   }
