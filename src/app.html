@@ -5,12 +5,59 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 		<style>
-			body,
-			html {
+			body {
+				background-color: #000;
+				color: #0f0;
+				font-family: 'Press Start 2P', cursive;
 				margin: 0;
 				padding: 0;
-				background-color: #1a1a1a;
+			}
+
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			::-webkit-scrollbar-track {
+				background: #000;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: #0f0;
+				border: 1px solid #000;
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: #0a0; /* Darker green for hover */
+			}
+
+			/* Basic page transition styling - you can expand on this */
+			::view-transition-old(root),
+			::view-transition-new(root) {
+				animation-duration: 0.5s; /* Adjust duration as needed */
+				animation-timing-function: ease-in-out;
+			}
+
+			/* Example: Fade transition */
+			/* You can create more complex pixel art animations here */
+			::view-transition-old(root) {
+				animation-name: fadeOut;
+			}
+			::view-transition-new(root) {
+				animation-name: fadeIn;
+			}
+
+			@keyframes fadeIn {
+				from { opacity: 0; transform: scale(0.95); }
+				to { opacity: 1; transform: scale(1); }
+			}
+
+			@keyframes fadeOut {
+				from { opacity: 1; transform: scale(1); }
+				to { opacity: 0; transform: scale(0.95); }
 			}
 		</style>
 	</head>

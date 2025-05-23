@@ -1,38 +1,27 @@
-# sv
+# Retro Gaming Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a personal portfolio website with a retro gaming theme, built with SvelteKit.
 
-## Creating a project
+## About
 
-If you're seeing this, you've probably already done this step. Congrats!
+This portfolio showcases my personal projects and provides information about my skills and experience as a Software Engineer.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Features
 
-# create a new project in my-app
-npx sv create my-app
-```
+*   Retro gaming aesthetic (black and green, pixel art)
+*   Page transition animations
+*   Sections for projects and an about me page
 
-## Developing
+## Getting Started
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To run this project locally:
 
-```bash
-npm run dev
+1.  Clone the repository.
+2.  Install dependencies: `npm install` (or `yarn install`)
+3.  Start the development server: `npm run dev` (or `yarn dev`)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Customization
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+*   **Theme**: Modify the CSS variables and styles in `src/app.html` and individual Svelte components to change colors, fonts, and other visual elements.
+*   **Content**: Update the content in `src/routes/+page.svelte` (home page) and `src/routes/about/+page.svelte` (about page) to reflect your own projects and information.
+*   **Page Transitions**: Customize the animations in `src/routes/+layout.svelte` and the global CSS in `src/app.html`.
