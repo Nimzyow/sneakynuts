@@ -76,7 +76,9 @@
     <span></span>
     <span></span>
   </button>
-  <div class="site-title">Sneakynuts</div>
+  <a href="/" class="site-title-link">
+    <div class="site-title">Sneakynuts</div>
+  </a>
 </header>
 
 <div class="app-container">
@@ -100,7 +102,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 Sneakynuts - Nima Soufiani & Jake Coe</p>
+      <p>&copy; 2025 Sneakynuts</p>
     </footer>
   </div>
 </div>
@@ -297,5 +299,13 @@
       /* overflow-x: hidden; applied to main-content-area should suffice, 
          but can be added here if specific main content still overflows. */
     }
+  }
+
+  /* Add styles for the site title link */
+  .site-title-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from .top-navbar */
+    display: flex; /* If .site-title needs to align items internally */
+    align-items: center;
   }
 </style> 

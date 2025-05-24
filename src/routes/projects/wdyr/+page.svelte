@@ -57,8 +57,6 @@
 
   <section class="app-info">
       <h2>App Information</h2>
-      <p><strong>Provider:</strong> Nima GOLZAR-SOUFIANI</p>
-      <p><strong>Authors:</strong> Nima Golzar-Soufiani, Jake Coe</p>
       <p><strong>Category:</strong> Lifestyle</p>
       <p><strong>Compatibility:</strong> Requires iOS 15.1 or later (iPhone, iPod touch), macOS 12.0 or later (Apple M1 chip or later), visionOS 1.0 or later.</p>
       <p><strong>Price:</strong> Free (Offers In-App Purchases)</p>

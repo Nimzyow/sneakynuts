@@ -1,42 +1,48 @@
 <svelte:head>
-  <title>About Me - Retro Portfolio</title>
+  <title>About Us - Sneakynuts</title>
 </svelte:head>
 
 <div class="about-container">
-  <h1>About Me</h1>
+  <h1>About Us</h1>
   
-  <section class="bio">
+  <section class="intro">
     <p>
-      Hello! I'm a seasoned Software Engineer with a passion for creating innovative 
-      and efficient solutions. I have many years of experience in the field, 
-      working on a variety of projects and technologies.
-    </p>
-    <p>
-      My journey in software development has been driven by a love for problem-solving
-      and a constant desire to learn. I thrive in collaborative environments and enjoy 
-      tackling complex challenges.
-    </p>
-    <p>
-      When I'm not coding, I enjoy exploring the world of retro gaming, which heavily 
-      inspires my design aesthetic. I'm also a big fan of pixel art!
+      We are passionate developers and engineers 
+      looking to make an impact on the world! We love games, especially 
+      first-person shooters and all sorts of other genres.
     </p>
   </section>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Languages: JavaScript, TypeScript, Python, Java, C#</li>
-      <li>Frameworks: Svelte, React, Angular, Node.js, Django</li>
-      <li>Tools: Git, Docker, Kubernetes, AWS</li>
-      <li>Databases: PostgreSQL, MongoDB, Redis</li>
-    </ul>
+  <section class="experience">
+    <h2>Our Background</h2>
+    <p>
+      We've worked in a wide number of full-stack engineering roles and 
+      Linux administrator roles. With our combined experience and a shared vision, 
+      we aim to create something fun and engaging for the world.
+    </p>
   </section>
+
+  <section class="connect">
+    <h2>Connect With Us</h2>
+    <div class="profiles">
+      <div class="profile">
+        <h3>Forever in Transit</h3>
+        <a href="https://x.com/forevintransit" target="_blank" rel="noopener noreferrer">Twitter Profile</a>
+      </div>
+      <div class="profile">
+        <h3>Jake Coe</h3>
+        <a href="https://x.com/Jakecoe" target="_blank" rel="noopener noreferrer">Twitter Profile</a>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <style>
   .about-container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem; /* Add some padding for smaller screens */
   }
 
   h1 {
@@ -46,32 +52,67 @@
     text-shadow: 2px 2px #050; /* Darker green shadow */
   }
 
-  .bio p {
+  .intro p, .experience p {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
+    text-align: justify; /* Justify text for a cleaner look */
   }
 
-  .skills h2 {
+  .experience h2, .connect h2 {
     font-size: 2rem;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* Increased bottom margin */
     text-align: center;
   }
 
-  .skills ul {
-    list-style-type: none; /* Or use a pixelated bullet */
-    padding: 0;
+  .connect .profiles {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    flex-direction: column; /* Stack profiles vertically on small screens */
+    gap: 2rem; /* Space between profile cards */
+    align-items: center; /* Center cards */
   }
 
-  .skills li {
+  .connect .profile {
     background-color: #020; /* Very dark green */
-    padding: 0.5rem 1rem;
-    border: 1px solid #0f0;
-    font-size: 1rem;
+    padding: 1.5rem;
+    border: 2px solid #0f0;
+    text-align: center;
+    width: 100%; /* Make cards take full width initially */
+    max-width: 350px; /* Max width for each card */
   }
+
+  .connect .profile h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0f0;
+  }
+
+  .connect .profile a {
+    color: #0f0;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px dashed #0f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .connect .profile a:hover {
+    background-color: #0f0;
+    color: #000;
+    text-decoration: none;
+  }
+
+  /* Responsive adjustments for profile layout */
+  @media (min-width: 600px) {
+    .connect .profiles {
+      flex-direction: row; /* Profiles side-by-side on larger screens */
+      justify-content: space-around; /* Distribute space */
+    }
+    .connect .profile {
+      width: 45%; /* Adjust width for side-by-side layout */
+    }
+  }
+
 </style> 
