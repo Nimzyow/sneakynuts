@@ -80,7 +80,7 @@
 </header>
 
 <div class="app-container">
-  <aside class="sidebar" class:visible={$sidebarVisible} bind:this={sidebarElement}>
+  <aside class="sidebar" class:visible={$sidebarVisible} bind:this={sidebarElement} style="view-transition-name: sidebar-area;">
     <nav>
       <a href="/" class:active={$page.url.pathname === '/'}>Home</a>
       <a href="/about" class:active={$page.url.pathname === '/about'}>About</a>
@@ -277,6 +277,7 @@
 
     .sidebar.visible {
       left: 0; /* Slide in */
+      z-index: 10001; /* Ensure it's above the page transition overlay */
     }
 
     .hamburger {
