@@ -66,6 +66,19 @@
   }
 </script>
 
+<header class="top-navbar">
+  <button 
+    class="hamburger" 
+    class:open={$sidebarVisible} 
+    on:click={() => sidebarVisible.update(v => !v)}
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="site-title">Sneakynuts</div>
+</header>
+
 <div class="app-container">
   <aside class="sidebar" class:visible={$sidebarVisible} bind:this={sidebarElement}>
     <nav>
@@ -76,14 +89,6 @@
   </aside>
 
   <div class="main-content-area">
-    <button class="hamburger" 
-            class:open={$sidebarVisible} 
-            class:hidden-when-sidebar-open={$sidebarVisible} 
-            on:click={() => sidebarVisible.update(v => !v)}>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     {#if $transitioning}
       <div class="page-transition-overlay">
         <p>Loading...</p>
@@ -107,6 +112,7 @@
     background-color: #000;
     color: #0f0;
     font-family: 'Press Start 2P', cursive;
+    margin-top: 50px; /* Account for fixed top-navbar height */
   }
 
   .sidebar {
@@ -116,6 +122,11 @@
     border-right: 2px solid #0f0;
     display: flex;
     flex-direction: column;
+    /* For Desktop view, ensure it also respects the top navbar */
+    position: sticky; /* Or fixed, depending on desired scroll behavior with main content */
+    top: 50px; /* Height of the top-navbar */
+    height: calc(100vh - 50px); /* Adjust height to fill below top-navbar */
+    overflow-y: auto; /* Allow sidebar to scroll if its content is too long */
   }
 
   .sidebar nav {
@@ -207,17 +218,36 @@
     to { opacity: 0; transform: translateY(-15px); }
   }
 
-  /* Hamburger Menu Styles */
+  /* NEW: Top Navbar Styles */
+  .top-navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Define navbar height */
+    background-color: #030; /* Example: slightly different green */
+    border-bottom: 2px solid #0f0;
+    z-index: 1005; /* Ensure it's above other content like sidebar */
+    color: #0f0;
+  }
+
+  .site-title {
+    font-size: 1.2rem; /* Adjust as needed */
+    margin-left: 1rem; /* Space from hamburger */
+    font-weight: bold;
+  }
+
+  /* Hamburger Menu Styles Adjustments */
   .hamburger {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by default (on larger screens, shown via media query) */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 1rem;
-    position: fixed; /* Or absolute, depending on layout */
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001; /* Above sidebar if sidebar is also fixed/absolute */
+    padding: 0.5rem; /* Adjusted padding */
+    /* Removed position:fixed, top, left, z-index as it's now in flow of top-navbar */
   }
 
   .hamburger span {
@@ -232,16 +262,17 @@
   /* Responsive Styles */
   @media (max-width: 768px) {
     .sidebar {
-      position: fixed; /* Or absolute */
+      position: fixed; /* Overrides sticky/fixed from desktop for slide-in behavior */
+      top: 50px; /* Start below the fixed top-navbar */
       left: -250px; /* Hidden off-screen */
-      top: 0;
-      bottom: 0;
-      height: 100vh; /* Full height */
+      /* bottom: 0; is implicitly handled by height */
+      height: calc(100vh - 50px); /* Fill remaining height */
       width: 250px; /* A bit wider for touch targets */
       z-index: 1000;
       transition: left 0.3s ease-in-out;
-      overflow-y: auto; /* Scroll if content overflows */
+      overflow-y: auto; /* Already present, but good to confirm */
       box-sizing: border-box; /* Ensure padding and border are within the width */
+      /* No need to repeat background, border-right etc. if they are the same as desktop */
     }
 
     .sidebar.visible {
@@ -250,10 +281,6 @@
 
     .hamburger {
       display: block; /* Show hamburger on small screens */
-    }
-
-    .hamburger.hidden-when-sidebar-open {
-      display: none !important; /* Hide hamburger if sidebar is open */
     }
 
     .main-content-area {

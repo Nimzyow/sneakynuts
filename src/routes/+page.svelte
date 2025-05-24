@@ -10,12 +10,11 @@
 
 <div class="home-container">
   <h1>Welcome to the Sneakynuts Portfolio!</h1>
-  <p class="intro-text">Showcasing projects by Nima Soufiani & Jake Coe.</p>
   
   <section class="projects-grid">
     <div class="project-card">
       <h2>WDYR - What Do You Recommend</h2>
-      <p>A community-driven platform to discover the highest-rated local businesses and experiences. Never miss out on the best!</p>
+      <p>A community-driven platform to discover the highest-rated recommendations. Never miss out on the best!</p>
       <a href="/projects/wdyr" class="project-link">View Project Details &gt;</a>
     </div>
     <div class="project-card">
