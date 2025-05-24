@@ -34,31 +34,8 @@
 				background: #0a0; /* Darker green for hover */
 			}
 
-			/* Basic page transition styling - you can expand on this */
-			::view-transition-old(root),
-			::view-transition-new(root) {
-				animation-duration: 0.5s; /* Adjust duration as needed */
-				animation-timing-function: ease-in-out;
-			}
-
-			/* Example: Fade transition */
-			/* You can create more complex pixel art animations here */
-			::view-transition-old(root) {
-				animation-name: fadeOut;
-			}
-			::view-transition-new(root) {
-				animation-name: fadeIn;
-			}
-
-			@keyframes fadeIn {
-				from { opacity: 0; transform: scale(0.95); }
-				to { opacity: 1; transform: scale(1); }
-			}
-
-			@keyframes fadeOut {
-				from { opacity: 1; transform: scale(1); }
-				to { opacity: 0; transform: scale(0.95); }
-			}
+			/* Global root view transition styles REMOVED to prevent unintended animations on static elements like the sidebar. 
+			   Specific transitions are handled in +layout.svelte for the main-content-slot. */
 		</style>
 	</head>
 	<body data-sveltekit-preload-data="hover">
