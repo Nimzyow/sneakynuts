@@ -9,17 +9,22 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 		<style>
+			* {
+				box-sizing: border-box; /* Apply border-box to all elements */
+			}
+
 			body {
 				background-color: #000;
 				color: #0f0;
 				font-family: 'Press Start 2P', cursive;
 				margin: 0;
 				padding: 0;
+				overflow-x: hidden; /* Prevent horizontal scrolling on the body */
 			}
 
-			::-webkit-scrollbar {
+			/* ::-webkit-scrollbar {
 				width: 10px;
-			}
+			} */
 
 			::-webkit-scrollbar-track {
 				background: #000;

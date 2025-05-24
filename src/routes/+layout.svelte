@@ -3,8 +3,11 @@
   import { onNavigate, beforeNavigate } from '$app/navigation';
   import { page } from '$app/stores'; // Import the page store
   import { writable } from 'svelte/store';
+  import { onMount, onDestroy } from 'svelte'; // Import lifecycle functions
 
   let transitioning = writable(false);
+  let sidebarVisible = writable(false); // State for sidebar visibility
+  let sidebarElement: HTMLElement; // To bind to the aside element
 
   beforeNavigate(({ to, cancel, type }) => {
     // If trying to navigate to the same page via a link click, cancel it.
@@ -32,10 +35,39 @@
       });
     }
   });
+
+  function handleClickOutside(event: MouseEvent) {
+    if (sidebarElement && !sidebarElement.contains(event.target as Node) && $sidebarVisible) {
+      // Also check if the click was on the hamburger button itself
+      // This requires getting a reference to the hamburger button or checking its class
+      const targetElement = event.target as HTMLElement;
+      if (!targetElement.closest('.hamburger')) {
+        sidebarVisible.set(false);
+      }
+    }
+  }
+
+  onMount(() => {
+    // Listener is added/removed reactively below based on sidebarVisible
+    return () => {
+      window.removeEventListener('click', handleClickOutside, true);
+    };
+  });
+
+  // Reactive statement to add/remove event listener
+  $: {
+    if (typeof window !== 'undefined') { // Ensure code runs only in browser
+      if ($sidebarVisible) {
+        window.addEventListener('click', handleClickOutside, true); // Use capture phase
+      } else {
+        window.removeEventListener('click', handleClickOutside, true);
+      }
+    }
+  }
 </script>
 
 <div class="app-container">
-  <aside class="sidebar">
+  <aside class="sidebar" class:visible={$sidebarVisible} bind:this={sidebarElement}>
     <nav>
       <a href="/" class:active={$page.url.pathname === '/'}>Home</a>
       <a href="/about" class:active={$page.url.pathname === '/about'}>About</a>
@@ -44,6 +76,14 @@
   </aside>
 
   <div class="main-content-area">
+    <button class="hamburger" 
+            class:open={$sidebarVisible} 
+            class:hidden-when-sidebar-open={$sidebarVisible} 
+            on:click={() => sidebarVisible.update(v => !v)}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     {#if $transitioning}
       <div class="page-transition-overlay">
         <p>Loading...</p>
@@ -110,6 +150,8 @@
     display: flex;
     flex-direction: column;
     position: relative; /* For positioning the transition overlay */
+    width: 100%; /* Ensure it takes full available width */
+    overflow-x: hidden; /* Prevent its own horizontal scroll */
   }
   
   main {
@@ -163,5 +205,69 @@
   @keyframes fadeOutSlot {
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(-15px); }
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    position: fixed; /* Or absolute, depending on layout */
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001; /* Above sidebar if sidebar is also fixed/absolute */
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #0f0;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed; /* Or absolute */
+      left: -250px; /* Hidden off-screen */
+      top: 0;
+      bottom: 0;
+      height: 100vh; /* Full height */
+      width: 250px; /* A bit wider for touch targets */
+      z-index: 1000;
+      transition: left 0.3s ease-in-out;
+      overflow-y: auto; /* Scroll if content overflows */
+      box-sizing: border-box; /* Ensure padding and border are within the width */
+    }
+
+    .sidebar.visible {
+      left: 0; /* Slide in */
+    }
+
+    .hamburger {
+      display: block; /* Show hamburger on small screens */
+    }
+
+    .hamburger.hidden-when-sidebar-open {
+      display: none !important; /* Hide hamburger if sidebar is open */
+    }
+
+    .main-content-area {
+      /* Adjust padding or margin if needed when sidebar is hidden/shown */
+      /* For example, ensure hamburger doesn't overlap content if it's not fixed */
+      width: 100%; /* Ensure it takes full available width */
+      overflow-x: hidden; /* Prevent its own horizontal scroll */
+    }
+
+    main {
+      padding: 1rem; /* Reduce padding on smaller screens */
+      /* width: 100%; already implied by flex-grow and parent settings */
+      /* overflow-x: hidden; applied to main-content-area should suffice, 
+         but can be added here if specific main content still overflows. */
+    }
   }
 </style> 
