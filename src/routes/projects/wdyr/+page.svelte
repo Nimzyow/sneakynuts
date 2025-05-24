@@ -15,6 +15,17 @@
     <p>
       When you choose What Do You Recommend (WDYR), you're not just browsing businesses; you're unlocking the power of community-driven insights. Our platform empowers you to discover the highest-rated recommendations, ensuring you never miss out on the best experiences.
     </p>
+    
+    <!-- Screenshots inserted here -->
+    <div class="screenshots-inline">
+      <div class="image-gallery">
+        <img src="/images/favourite.png" alt="WDYR Favourite Screen">
+        <img src="/images/location.png" alt="WDYR Location Screen">
+        <img src="/images/recommendations.png" alt="WDYR Recommendations Screen">
+        <img src="/images/share.png" alt="WDYR Share Screen">
+      </div>
+    </div>
+
     <p>
       Imagine stepping into a local café or restaurant, knowing that it comes highly recommended. With WDYR, you can confidently explore recommendations that have garnered the most votes, allowing you to make informed choices that enhance your outings and never miss out on that top recommendation.
     </p>
@@ -52,16 +63,6 @@
       <p><strong>Compatibility:</strong> Requires iOS 15.1 or later (iPhone, iPod touch), macOS 12.0 or later (Apple M1 chip or later), visionOS 1.0 or later.</p>
       <p><strong>Price:</strong> Free (Offers In-App Purchases)</p>
   </section>
-
-  <!-- Consider adding a section for iPhone screenshots here -->
-  <!-- <section class="screenshots">
-    <h2>Screenshots</h2>
-    <div class="image-gallery">
-      <img src="/path/to/screenshot1.png" alt="WDYR Screenshot 1">
-      <img src="/path/to/screenshot2.png" alt="WDYR Screenshot 2">
-    </div>
-  </section> -->
-
 </div>
 
 <style>
@@ -75,7 +76,7 @@
     text-align: center;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid #050; /* Darker green border */
+    border-bottom: 2px solid #050;
   }
 
   .project-header h1 {
@@ -87,7 +88,7 @@
 
   .tagline {
     font-size: 1.3rem;
-    color: #0c0; /* Lighter green */
+    color: #0c0;
     margin-bottom: 1rem;
   }
 
@@ -99,7 +100,7 @@
     text-decoration: none;
     font-weight: bold;
     border: 2px solid #0f0;
-    border-radius: 5px; /* Slight rounding */
+    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -111,7 +112,7 @@
 
   section {
     margin-bottom: 2.5rem;
-    background-color: #010101; /* Very very dark green, almost black */
+    background-color: #010101;
     padding: 1.5rem;
     border: 1px solid #030;
   }
@@ -127,7 +128,7 @@
   p, li {
     font-size: 1rem;
     line-height: 1.7;
-    color: #0c0; /* Lighter green for readability */
+    color: #0c0;
   }
 
   ul {
@@ -140,21 +141,31 @@
   }
 
   strong {
-    color: #0f0; /* Brighter green for emphasis */
+    color: #0f0;
   }
 
   .app-info p {
      margin-bottom: 0.3rem;
   }
 
-  /* Styles for optional screenshot gallery */
-  /* .screenshots .image-gallery {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto; 
+  .screenshots-inline {
+    margin: 2rem 0;
+    background-color: #000;
+    padding: 0.5rem 0;
   }
-  .screenshots img {
-    max-height: 400px;
-    border: 2px solid #0f0;
-  } */
+  
+  .screenshots-inline .image-gallery {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+
+  .screenshots-inline img {
+    max-height: 300px;
+    height: auto;
+    border: 1px solid #0a0;
+    object-fit: contain;
+    border-radius: 4px;
+  }
 </style> 
