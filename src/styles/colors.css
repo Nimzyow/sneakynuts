@@ -1,7 +1,23 @@
 :root {
-    --color-primary: #3D5A80;
-    --color-secondary: #98C1D9;
-    --color-accent: #E0FBFC;
-    --color-highlight: #EE6C4D;
-    --color-dark: #293241;
-  }
+  /* Primary Gaming Colors */
+  --color-primary: #0A0A0A;
+  --color-secondary: #1A1A1A;
+  --color-accent: #FF6B35;
+  --color-highlight: #4ECDC4;
+  --color-gold: #FFD700;
+  --color-purple: #9B59B6;
+  --color-pink: #E91E63;
+  --color-blue: #3498DB;
+  --color-green: #2ECC71;
+  
+  /* Text Colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-text-dark: #1A1A1A;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-gaming: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}

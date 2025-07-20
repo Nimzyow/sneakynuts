@@ -1,230 +1,495 @@
 ---
 import "../styles/globals.css";
 ---
-<div class="min-h-screen bg-[var(--color-primary)]">
+
+<div class="min-h-screen bg-[var(--color-primary)] overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] rounded-lg flex items-center justify-center">
+            <span class="text-2xl">🎮</span>
+          </div>
+          <span class="text-2xl font-bold text-white">Sneaky Nuts</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#games" class="text-white hover:text-[var(--color-accent)] transition-colors">Games</a>
+          <a href="#about" class="text-white hover:text-[var(--color-accent)] transition-colors">About</a>
+          <a href="#careers" class="text-white hover:text-[var(--color-accent)] transition-colors">Careers</a>
+          <a href="#contact" class="text-white hover:text-[var(--color-accent)] transition-colors">Contact</a>
+        </div>
+        <button class="bg-[var(--color-accent)] text-[var(--color-text-dark)] px-6 py-2 rounded-full font-bold hover:bg-[var(--color-highlight)] transition-all transform hover:scale-105">
+          Join Us
+        </button>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center overflow-hidden">
-    <!-- Background Pattern (inspired by Thai temple patterns) -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-10 left-10 w-32 h-32 border-2 border-[var(--color-accent)] rotate-45"></div>
-      <div class="absolute top-20 right-20 w-24 h-24 border-2 border-[var(--color-highlight)] rotate-12"></div>
-      <div class="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-[var(--color-secondary)] rotate-90"></div>
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 left-20 w-32 h-32 bg-[var(--color-accent)] rounded-full opacity-20 animate-pulse"></div>
+      <div class="absolute top-40 right-32 w-24 h-24 bg-[var(--color-highlight)] rounded-full opacity-30 animate-bounce"></div>
+      <div class="absolute bottom-32 left-1/3 w-16 h-16 bg-[var(--color-purple)] rounded-full opacity-25 animate-ping"></div>
+      <div class="absolute bottom-20 right-1/4 w-20 h-20 bg-[var(--color-pink)] rounded-full opacity-20 animate-pulse"></div>
     </div>
     
-    <div class="text-center z-10">
-      <h1 class="text-6xl md:text-8xl font-bold mb-6 text-[var(--color-highlight)]">
-        Nima Soufiani
-      </h1>
-      <p class="text-2xl md:text-3xl mb-8 text-[var(--color-accent)]">
-        Software Engineer & Digital Nomad
+    <!-- Geometric Shapes -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 border-2 border-[var(--color-accent)] rotate-45 animate-spin-slow"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-48 h-48 border-2 border-[var(--color-highlight)] rotate-12 animate-pulse"></div>
+    </div>
+
+    <div class="text-center z-10 max-w-6xl mx-auto px-6">
+      <div class="mb-8">
+        <h1 class="text-7xl md:text-9xl font-black mb-6 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-highlight)] to-[var(--color-purple)] bg-clip-text text-transparent animate-gradient">
+          SNEAKY NUTS
+        </h1>
+        <p class="text-3xl md:text-4xl mb-8 text-white font-light">
+          We Create <span class="text-[var(--color-accent)] font-bold">Epic</span> Digital Experiences
+        </p>
+      </div>
+      
+      <p class="text-xl md:text-2xl mb-12 text-[var(--color-text-secondary)] max-w-4xl mx-auto leading-relaxed">
+        From mobile games to enterprise solutions, we craft experiences that millions love. 
+        Join us in building the future of digital entertainment.
       </p>
-      <div class="flex flex-wrap justify-center gap-4 text-[var(--color-secondary)]">
-        <span class="px-4 py-2 border border-[var(--color-secondary)] rounded-full">Full-Stack Development</span>
-        <span class="px-4 py-2 border border-[var(--color-secondary)] rounded-full">Cloud Architecture</span>
-        <span class="px-4 py-2 border border-[var(--color-secondary)] rounded-full">DevOps</span>
+      
+      <div class="flex flex-wrap justify-center gap-6 mb-16">
+        <button class="group relative px-10 py-5 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] rounded-full font-bold text-xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[var(--color-accent)]/50">
+          <span class="relative z-10">Play Our Games</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-highlight)] to-[var(--color-accent)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </button>
+        <button class="px-10 py-5 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded-full font-bold text-xl hover:bg-[var(--color-accent)] hover:text-[var(--color-text-dark)] transition-all duration-300 hover:scale-105">
+          Join Our Team
+        </button>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-[var(--color-accent)] mb-2">50M+</div>
+          <div class="text-[var(--color-text-secondary)]">Downloads</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-[var(--color-highlight)] mb-2">15+</div>
+          <div class="text-[var(--color-text-secondary)]">Games</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-[var(--color-purple)] mb-2">100+</div>
+          <div class="text-[var(--color-text-secondary)]">Team Members</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-[var(--color-pink)] mb-2">4.8★</div>
+          <div class="text-[var(--color-text-secondary)]">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Games Section -->
+  <section id="games" class="py-32 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
+          Our <span class="text-[var(--color-accent)]">Games</span>
+        </h2>
+        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+          Discover our collection of award-winning games that millions of players enjoy worldwide.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Game 1 -->
+        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-highlight)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-6xl mb-6">🎯</div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Recommends</h3>
+            <p class="text-[var(--color-text-secondary)] mb-6">
+              AI-powered discovery app that helps you find amazing places and experiences.
+            </p>
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <span class="text-[var(--color-gold)]">★★★★★</span>
+                <span class="text-[var(--color-text-secondary)]">4.8</span>
+              </div>
+              <div class="text-[var(--color-accent)] font-bold">Free</div>
+            </div>
+            <button class="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] py-3 rounded-lg font-bold hover:scale-105 transition-transform">
+              Download Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Game 2 -->
+        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-purple)]/20 to-[var(--color-pink)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-6xl mb-6">🏆</div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Epic Quest</h3>
+            <p class="text-[var(--color-text-secondary)] mb-6">
+              An epic adventure game where you battle monsters and collect legendary treasures.
+            </p>
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <span class="text-[var(--color-gold)]">★★★★★</span>
+                <span class="text-[var(--color-text-secondary)]">4.9</span>
+              </div>
+              <div class="text-[var(--color-accent)] font-bold">Free</div>
+            </div>
+            <button class="w-full bg-gradient-to-r from-[var(--color-purple)] to-[var(--color-pink)] text-white py-3 rounded-lg font-bold hover:scale-105 transition-transform">
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        <!-- Game 3 -->
+        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-blue)]/20 to-[var(--color-green)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-6xl mb-6">🚀</div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Space Warriors</h3>
+            <p class="text-[var(--color-text-secondary)] mb-6">
+              Defend the galaxy in this action-packed space shooter with stunning graphics.
+            </p>
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <span class="text-[var(--color-gold)]">★★★★★</span>
+                <span class="text-[var(--color-text-secondary)]">4.7</span>
+              </div>
+              <div class="text-[var(--color-accent)] font-bold">Free</div>
+            </div>
+            <button class="w-full bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-green)] text-white py-3 rounded-lg font-bold hover:scale-105 transition-transform">
+              Coming Soon
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="py-20 bg-[var(--color-dark)]">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <section id="about" class="py-32 bg-[var(--color-primary)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 class="text-4xl font-bold mb-6 text-[var(--color-highlight)]">About Me</h2>
-          <p class="text-lg mb-6 text-[var(--color-accent)]">
-            I'm a freelance software engineer with a passion for building robust, scalable solutions. 
-            When I'm not coding, you'll find me exploring the world's oceans, training in Muay Thai, 
-            or immersing myself in different cultures.
+          <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
+            We're <span class="text-[var(--color-accent)]">Sneaky Nuts</span>
+          </h2>
+          <p class="text-xl text-[var(--color-text-secondary)] mb-8 leading-relaxed">
+            A passionate team of game developers, designers, and innovators who believe that great games can change the world. 
+            We're not just building games – we're creating experiences that bring people together.
           </p>
-          <p class="text-lg text-[var(--color-secondary)]">
-            My journey has taken me from the bustling streets of Bangkok to the serene temples of Kyoto, 
-            from the depths of the Andaman Sea to the ring of a Muay Thai gym. These experiences shape 
-            my approach to problem-solving and collaboration.
-          </p>
+          <div class="grid grid-cols-2 gap-8 mb-8">
+            <div>
+              <div class="text-3xl font-bold text-[var(--color-accent)] mb-2">2018</div>
+              <div class="text-[var(--color-text-secondary)]">Founded</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[var(--color-highlight)] mb-2">100+</div>
+              <div class="text-[var(--color-text-secondary)]">Team Members</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[var(--color-purple)] mb-2">15+</div>
+              <div class="text-[var(--color-text-secondary)]">Games Released</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[var(--color-pink)] mb-2">50M+</div>
+              <div class="text-[var(--color-text-secondary)]">Happy Players</div>
+            </div>
+          </div>
+          <button class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
+            Learn More About Us
+          </button>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <!-- Experience Cards -->
-          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">5+ Years</h3>
-            <p class="text-[var(--color-accent)]">Software Development</p>
-          </div>
-          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">20+ Countries</h3>
-            <p class="text-[var(--color-accent)]">Worked Remotely</p>
-          </div>
-          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">100+ Dives</h3>
-            <p class="text-[var(--color-accent)]">Scuba Experience</p>
-          </div>
-          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Muay Thai</h3>
-            <p class="text-[var(--color-accent)]">Trained in Thailand</p>
+        <div class="relative">
+          <!-- Team Photo Mockup -->
+          <div class="relative">
+            <div class="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] p-8 rounded-2xl">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="w-20 h-20 bg-[var(--color-purple)] rounded-full flex items-center justify-center text-2xl">👨‍💻</div>
+                <div class="w-20 h-20 bg-[var(--color-pink)] rounded-full flex items-center justify-center text-2xl">👩‍🎨</div>
+                <div class="w-20 h-20 bg-[var(--color-blue)] rounded-full flex items-center justify-center text-2xl">👨‍🔬</div>
+                <div class="w-20 h-20 bg-[var(--color-green)] rounded-full flex items-center justify-center text-2xl">👩‍💼</div>
+                <div class="w-20 h-20 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-2xl">👨‍🎮</div>
+                <div class="w-20 h-20 bg-[var(--color-highlight)] rounded-full flex items-center justify-center text-2xl">👩‍🚀</div>
+              </div>
+              <div class="text-center mt-6">
+                <div class="text-2xl font-bold text-[var(--color-text-dark)]">Our Amazing Team</div>
+                <div class="text-[var(--color-text-dark)] opacity-80">Passionate creators making magic happen</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section (Inspired by Japanese minimalism) -->
-  <section class="py-20 bg-[var(--color-primary)]">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center text-[var(--color-highlight)]">Technical Skills</h2>
+  <!-- Values Section -->
+  <section class="py-32 bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
+          Our <span class="text-[var(--color-accent)]">Values</span>
+        </h2>
+        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+          The principles that guide everything we do and every game we create.
+        </p>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Frontend -->
-        <div class="bg-[var(--color-dark)] p-8 rounded-lg">
-          <h3 class="text-2xl font-bold mb-4 text-[var(--color-highlight)]">Frontend</h3>
-          <div class="space-y-3 text-[var(--color-accent)]">
-            <div class="flex justify-between">
-              <span>React/Next.js</span>
-              <span class="text-[var(--color-secondary)]">95%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 95%"></div>
-            </div>
-            <div class="flex justify-between">
-              <span>Vue.js</span>
-              <span class="text-[var(--color-secondary)]">90%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 90%"></div>
-            </div>
-            <div class="flex justify-between">
-              <span>TypeScript</span>
-              <span class="text-[var(--color-secondary)]">88%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 88%"></div>
-            </div>
+        <div class="text-center group">
+          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+            <span class="text-4xl">🎯</span>
           </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Excellence</h3>
+          <p class="text-[var(--color-text-secondary)]">
+            We strive for excellence in everything we do, from game design to player experience.
+          </p>
         </div>
 
-        <!-- Backend -->
-        <div class="bg-[var(--color-dark)] p-8 rounded-lg">
-          <h3 class="text-2xl font-bold mb-4 text-[var(--color-highlight)]">Backend</h3>
-          <div class="space-y-3 text-[var(--color-accent)]">
-            <div class="flex justify-between">
-              <span>Node.js/Express</span>
-              <span class="text-[var(--color-secondary)]">92%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 92%"></div>
-            </div>
-            <div class="flex justify-between">
-              <span>Python/Django</span>
-              <span class="text-[var(--color-secondary)]">85%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 85%"></div>
-            </div>
-            <div class="flex justify-between">
-              <span>PostgreSQL</span>
-              <span class="text-[var(--color-secondary)]">90%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 90%"></div>
-            </div>
+        <div class="text-center group">
+          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+            <span class="text-4xl">💡</span>
           </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Innovation</h3>
+          <p class="text-[var(--color-text-secondary)]">
+            We push boundaries and explore new technologies to create groundbreaking experiences.
+          </p>
         </div>
 
-        <!-- DevOps -->
-        <div class="bg-[var(--color-dark)] p-8 rounded-lg">
-          <h3 class="text-2xl font-bold mb-4 text-[var(--color-highlight)]">DevOps</h3>
-          <div class="space-y-3 text-[var(--color-accent)]">
-            <div class="flex justify-between">
-              <span>AWS/Docker</span>
-              <span class="text-[var(--color-secondary)]">88%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 88%"></div>
-            </div>
-            <div class="flex justify-between">
-              <span>CI/CD</span>
-              <span class="text-[var(--color-secondary)]">85%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 85%"></div>
-            </div>
-            <div class="flex justify-between">
-              <span>Kubernetes</span>
-              <span class="text-[var(--color-secondary)]">80%</span>
-            </div>
-            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
-              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 80%"></div>
-            </div>
+        <div class="text-center group">
+          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+            <span class="text-4xl">🤝</span>
           </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Community</h3>
+          <p class="text-[var(--color-text-secondary)]">
+            We believe in building strong communities and fostering meaningful connections.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Adventure Section (Inspired by travel and diving) -->
-  <section class="py-20 bg-[var(--color-dark)]">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center text-[var(--color-highlight)]">Beyond Code</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Thailand -->
-        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
-          <div class="text-4xl mb-4">🇹🇭</div>
-          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Thailand</h3>
-          <p class="text-[var(--color-accent)] text-sm">
-            Trained Muay Thai in Bangkok, explored ancient temples, and worked remotely from Chiang Mai
+  <!-- Careers Section -->
+  <section id="careers" class="py-32 bg-[var(--color-primary)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
+          Join Our <span class="text-[var(--color-accent)]">Team</span>
+        </h2>
+        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+          Ready to create the next big thing? We're always looking for talented people who share our passion for gaming.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl hover:scale-105 transition-transform cursor-pointer">
+          <div class="text-4xl mb-4">🎮</div>
+          <h3 class="text-xl font-bold mb-4 text-white">Game Developers</h3>
+          <p class="text-[var(--color-text-secondary)] mb-6">
+            Create amazing games using Unity, Unreal Engine, and custom engines.
           </p>
+          <button class="text-[var(--color-accent)] font-bold hover:text-[var(--color-highlight)] transition-colors">
+            Apply Now →
+          </button>
         </div>
-        
-        <!-- Japan -->
-        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
-          <div class="text-4xl mb-4">🇯🇵</div>
-          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Japan</h3>
-          <p class="text-[var(--color-accent)] text-sm">
-            Immersed in Tokyo's tech scene, visited Kyoto's temples, and learned from Japanese craftsmanship
+
+        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl hover:scale-105 transition-transform cursor-pointer">
+          <div class="text-4xl mb-4">🎨</div>
+          <h3 class="text-xl font-bold mb-4 text-white">Artists & Designers</h3>
+          <p class="text-[var(--color-text-secondary)] mb-6">
+            Bring our games to life with stunning visuals and creative designs.
           </p>
+          <button class="text-[var(--color-accent)] font-bold hover:text-[var(--color-highlight)] transition-colors">
+            Apply Now →
+          </button>
         </div>
-        
-        <!-- Scuba Diving -->
-        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
-          <div class="text-4xl mb-4">🤿</div>
-          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Scuba Diving</h3>
-          <p class="text-[var(--color-accent)] text-sm">
-            Explored coral reefs in the Andaman Sea, discovered the importance of precision and patience
+
+        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl hover:scale-105 transition-transform cursor-pointer">
+          <div class="text-4xl mb-4">📱</div>
+          <h3 class="text-xl font-bold mb-4 text-white">Mobile Engineers</h3>
+          <p class="text-[var(--color-text-secondary)] mb-6">
+            Build and optimize mobile games for iOS and Android platforms.
           </p>
+          <button class="text-[var(--color-accent)] font-bold hover:text-[var(--color-highlight)] transition-colors">
+            Apply Now →
+          </button>
         </div>
-        
-        <!-- Muay Thai -->
-        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
-          <div class="text-4xl mb-4">🥊</div>
-          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Muay Thai</h3>
-          <p class="text-[var(--color-accent)] text-sm">
-            Trained in authentic Thai gyms, learned discipline, focus, and the art of continuous improvement
+
+        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl hover:scale-105 transition-transform cursor-pointer">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-xl font-bold mb-4 text-white">Product Managers</h3>
+          <p class="text-[var(--color-text-secondary)] mb-6">
+            Lead game development and drive product strategy and growth.
           </p>
+          <button class="text-[var(--color-accent)] font-bold hover:text-[var(--color-highlight)] transition-colors">
+            Apply Now →
+          </button>
         </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <button class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] px-10 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform">
+          View All Open Positions
+        </button>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="py-20 bg-[var(--color-primary)]">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8 text-[var(--color-highlight)]">Ready to Build Something Amazing?</h2>
-      <p class="text-xl mb-8 text-[var(--color-accent)]">
-        Whether you need a full-stack application, cloud infrastructure, or just want to discuss your next project, 
-        I'm here to help bring your vision to life.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <button class="px-8 py-4 bg-[var(--color-highlight)] text-[var(--color-dark)] rounded-lg font-bold text-lg hover:bg-[var(--color-secondary)] transition-colors">
-          Start a Project
-        </button>
-        <button class="px-8 py-4 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded-lg font-bold text-lg hover:bg-[var(--color-accent)] hover:text-[var(--color-dark)] transition-colors">
-          View Portfolio
-        </button>
+  <section id="contact" class="py-32 bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
+          Get In <span class="text-[var(--color-accent)]">Touch</span>
+        </h2>
+        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+          Have a question, suggestion, or just want to say hello? We'd love to hear from you!
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <div class="space-y-8">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center">
+                <span class="text-xl">📧</span>
+              </div>
+              <div>
+                <div class="text-white font-bold">Email</div>
+                <div class="text-[var(--color-text-secondary)]">hello@sneakynuts.com</div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center">
+                <span class="text-xl">📱</span>
+              </div>
+              <div>
+                <div class="text-white font-bold">Phone</div>
+                <div class="text-[var(--color-text-secondary)]">+1 (555) 123-4567</div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center">
+                <span class="text-xl">🌍</span>
+              </div>
+              <div>
+                <div class="text-white font-bold">Location</div>
+                <div class="text-[var(--color-text-secondary)]">Remote Worldwide</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold mb-6 text-white">Follow Us</h3>
+            <div class="flex space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <span class="text-xl">🐦</span>
+              </div>
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <span class="text-xl">📘</span>
+              </div>
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <span class="text-xl">📷</span>
+              </div>
+              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-gold)] to-[var(--color-accent)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                <span class="text-xl">💼</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl">
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <input type="text" placeholder="First Name" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
+              <input type="text" placeholder="Last Name" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
+            </div>
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
+            <textarea placeholder="Your Message" rows="6" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-none"></textarea>
+            <button class="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform">
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 bg-[var(--color-dark)] text-center">
-    <p class="text-[var(--color-secondary)]">
-      © 2024 Nima Soufiani. Built with passion, deployed from around the world.
-    </p>
+  <footer class="py-16 bg-[var(--color-primary)] border-t border-[var(--color-text-secondary)]/20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-8 h-8 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] rounded-lg flex items-center justify-center">
+              <span class="text-sm">🎮</span>
+            </div>
+            <span class="text-xl font-bold text-white">Sneaky Nuts</span>
+          </div>
+          <p class="text-[var(--color-text-secondary)] text-sm">
+            Creating epic digital experiences that millions love. Join us in building the future of gaming.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-white">Games</h3>
+          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Recommends</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Epic Quest</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Space Warriors</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Coming Soon</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-white">Company</h3>
+          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Careers</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Press</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-white">Support</h3>
+          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Help Center</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Community</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-[var(--color-text-secondary)]/20 pt-8 text-center">
+        <p class="text-[var(--color-text-secondary)] text-sm">
+          © 2024 Sneaky Nuts. All rights reserved. Built with passion and precision.
+        </p>
+      </div>
+    </div>
   </footer>
 </div>
+
+<style>
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+</style>
