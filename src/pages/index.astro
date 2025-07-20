@@ -1,0 +1,230 @@
+---
+import "../styles/globals.css";
+---
+<div class="min-h-screen bg-[var(--color-primary)]">
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Pattern (inspired by Thai temple patterns) -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-32 h-32 border-2 border-[var(--color-accent)] rotate-45"></div>
+      <div class="absolute top-20 right-20 w-24 h-24 border-2 border-[var(--color-highlight)] rotate-12"></div>
+      <div class="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-[var(--color-secondary)] rotate-90"></div>
+    </div>
+    
+    <div class="text-center z-10">
+      <h1 class="text-6xl md:text-8xl font-bold mb-6 text-[var(--color-highlight)]">
+        Nima Soufiani
+      </h1>
+      <p class="text-2xl md:text-3xl mb-8 text-[var(--color-accent)]">
+        Software Engineer & Digital Nomad
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-[var(--color-secondary)]">
+        <span class="px-4 py-2 border border-[var(--color-secondary)] rounded-full">Full-Stack Development</span>
+        <span class="px-4 py-2 border border-[var(--color-secondary)] rounded-full">Cloud Architecture</span>
+        <span class="px-4 py-2 border border-[var(--color-secondary)] rounded-full">DevOps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 bg-[var(--color-dark)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6 text-[var(--color-highlight)]">About Me</h2>
+          <p class="text-lg mb-6 text-[var(--color-accent)]">
+            I'm a freelance software engineer with a passion for building robust, scalable solutions. 
+            When I'm not coding, you'll find me exploring the world's oceans, training in Muay Thai, 
+            or immersing myself in different cultures.
+          </p>
+          <p class="text-lg text-[var(--color-secondary)]">
+            My journey has taken me from the bustling streets of Bangkok to the serene temples of Kyoto, 
+            from the depths of the Andaman Sea to the ring of a Muay Thai gym. These experiences shape 
+            my approach to problem-solving and collaboration.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Experience Cards -->
+          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">5+ Years</h3>
+            <p class="text-[var(--color-accent)]">Software Development</p>
+          </div>
+          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">20+ Countries</h3>
+            <p class="text-[var(--color-accent)]">Worked Remotely</p>
+          </div>
+          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">100+ Dives</h3>
+            <p class="text-[var(--color-accent)]">Scuba Experience</p>
+          </div>
+          <div class="bg-[var(--color-primary)] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Muay Thai</h3>
+            <p class="text-[var(--color-accent)]">Trained in Thailand</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section (Inspired by Japanese minimalism) -->
+  <section class="py-20 bg-[var(--color-primary)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center text-[var(--color-highlight)]">Technical Skills</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Frontend -->
+        <div class="bg-[var(--color-dark)] p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[var(--color-highlight)]">Frontend</h3>
+          <div class="space-y-3 text-[var(--color-accent)]">
+            <div class="flex justify-between">
+              <span>React/Next.js</span>
+              <span class="text-[var(--color-secondary)]">95%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 95%"></div>
+            </div>
+            <div class="flex justify-between">
+              <span>Vue.js</span>
+              <span class="text-[var(--color-secondary)]">90%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 90%"></div>
+            </div>
+            <div class="flex justify-between">
+              <span>TypeScript</span>
+              <span class="text-[var(--color-secondary)]">88%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 88%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="bg-[var(--color-dark)] p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[var(--color-highlight)]">Backend</h3>
+          <div class="space-y-3 text-[var(--color-accent)]">
+            <div class="flex justify-between">
+              <span>Node.js/Express</span>
+              <span class="text-[var(--color-secondary)]">92%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 92%"></div>
+            </div>
+            <div class="flex justify-between">
+              <span>Python/Django</span>
+              <span class="text-[var(--color-secondary)]">85%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 85%"></div>
+            </div>
+            <div class="flex justify-between">
+              <span>PostgreSQL</span>
+              <span class="text-[var(--color-secondary)]">90%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="bg-[var(--color-dark)] p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[var(--color-highlight)]">DevOps</h3>
+          <div class="space-y-3 text-[var(--color-accent)]">
+            <div class="flex justify-between">
+              <span>AWS/Docker</span>
+              <span class="text-[var(--color-secondary)]">88%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 88%"></div>
+            </div>
+            <div class="flex justify-between">
+              <span>CI/CD</span>
+              <span class="text-[var(--color-secondary)]">85%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 85%"></div>
+            </div>
+            <div class="flex justify-between">
+              <span>Kubernetes</span>
+              <span class="text-[var(--color-secondary)]">80%</span>
+            </div>
+            <div class="w-full bg-[var(--color-primary)] rounded-full h-2">
+              <div class="bg-[var(--color-highlight)] h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adventure Section (Inspired by travel and diving) -->
+  <section class="py-20 bg-[var(--color-dark)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center text-[var(--color-highlight)]">Beyond Code</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Thailand -->
+        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">🇹🇭</div>
+          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Thailand</h3>
+          <p class="text-[var(--color-accent)] text-sm">
+            Trained Muay Thai in Bangkok, explored ancient temples, and worked remotely from Chiang Mai
+          </p>
+        </div>
+        
+        <!-- Japan -->
+        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">🇯🇵</div>
+          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Japan</h3>
+          <p class="text-[var(--color-accent)] text-sm">
+            Immersed in Tokyo's tech scene, visited Kyoto's temples, and learned from Japanese craftsmanship
+          </p>
+        </div>
+        
+        <!-- Scuba Diving -->
+        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">🤿</div>
+          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Scuba Diving</h3>
+          <p class="text-[var(--color-accent)] text-sm">
+            Explored coral reefs in the Andaman Sea, discovered the importance of precision and patience
+          </p>
+        </div>
+        
+        <!-- Muay Thai -->
+        <div class="bg-[var(--color-primary)] p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">🥊</div>
+          <h3 class="text-xl font-bold mb-2 text-[var(--color-highlight)]">Muay Thai</h3>
+          <p class="text-[var(--color-accent)] text-sm">
+            Trained in authentic Thai gyms, learned discipline, focus, and the art of continuous improvement
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-[var(--color-primary)]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8 text-[var(--color-highlight)]">Ready to Build Something Amazing?</h2>
+      <p class="text-xl mb-8 text-[var(--color-accent)]">
+        Whether you need a full-stack application, cloud infrastructure, or just want to discuss your next project, 
+        I'm here to help bring your vision to life.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="px-8 py-4 bg-[var(--color-highlight)] text-[var(--color-dark)] rounded-lg font-bold text-lg hover:bg-[var(--color-secondary)] transition-colors">
+          Start a Project
+        </button>
+        <button class="px-8 py-4 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded-lg font-bold text-lg hover:bg-[var(--color-accent)] hover:text-[var(--color-dark)] transition-colors">
+          View Portfolio
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-[var(--color-dark)] text-center">
+    <p class="text-[var(--color-secondary)]">
+      © 2024 Nima Soufiani. Built with passion, deployed from around the world.
+    </p>
+  </footer>
+</div>
