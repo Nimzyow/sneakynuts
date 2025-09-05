@@ -20,6 +20,7 @@ const sortedPosts = blogCollection.sort((a: CollectionEntry<'blog'>, b: Collecti
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Blog - Sneaky Nuts</title>
 </head>
 <body>
@@ -243,6 +244,18 @@ const sortedPosts = blogCollection.sort((a: CollectionEntry<'blog'>, b: Collecti
     font-variant-emoji: emoji;
     -webkit-font-feature-settings: "emoji";
     font-feature-settings: "emoji";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Ensure all text uses proper encoding */
+  * {
+    font-family: inherit;
+  }
+  
+  /* Force UTF-8 rendering */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
   
   /* Responsive adjustments for mobile */
