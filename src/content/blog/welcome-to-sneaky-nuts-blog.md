@@ -1,58 +1,31 @@
 ---
-title: "Welcome to the Sneaky Nuts Blog!"
-description: "Join us as we share insights, behind-the-scenes stories, and updates from our game development journey."
-author: "Sarah Chen"
-pubDate: 2024-01-15
-tags: ["announcement", "company", "welcome"]
-emoji: "🎉"
+title: "SneakyNuts Welcome Blog"
+description: "Yea, we created a blog...in 2025!"
+author: "SneakyNuts"
+pubDate: 2025-09-05
+tags: ["announcement", "personal", "welcome", "blogging"]
+emoji: "📝"
 featured: true
 ---
 
-# Welcome to Our New Blog! 🎉
+# Sneaky Nuts Welcome Blog
 
-We're thrilled to launch the **Sneaky Nuts Blog** - your go-to destination for all things gaming, development, and innovation! This is where we'll share our journey, insights, and the stories behind our games.
+Creating a blog, am I in 2005 or something?
 
-## What You Can Expect
+Yes, this style of blog creation is a relic of the past, sure, but I feel it's still a wonderful avenue to release some steam and unleash a bit of creativity.
 
-Here's what we'll be covering in our blog posts:
+The modern day alternatives are a quick 30 second TikTok video, but I'm old school, I like to actually read and write. I find it wonderful to pick up a good old fashioned crime novel and read it, obsess over every word, engage with the dark sorcery that is the written word.
 
-- **Behind-the-scenes** development stories
-- **Technical insights** and lessons learned
-- **Team spotlights** and interviews
-- **Game updates** and announcements
-- **Industry trends** and analysis
-- **Community highlights** and player stories
+However, I know the trend these days is moving towards quick, short and snappy video content. I won't say this is sad nor do I intend on painting this trend in a negative light. It's just the way the people of today wish to consume their content.
 
-## Our Mission
+Through creating this blog, I do not wish to make it look like I'm turning my back towards the "in" thing nor do I wish to rebel against current media consumption trends. I hope this blog and the upcoming blogs serve as a creative spark that will involve me one day also creating small TikTok videos on the side.
 
-At Sneaky Nuts, we believe that great games come from great stories. Every line of code, every pixel, and every sound effect tells a story. Through this blog, we want to share those stories with you.
+For now though, I intend on blogging my thoughts on a variety of subject matter that interests me or may frustrate me. I expect my fellow colleague who I founded sneakynuts with will do the same also!
 
-> "The best games are not just played, they're experienced. They create memories, forge friendships, and sometimes even change lives." - Our Development Philosophy
+Subject matter will almost certainly involve technology, video games, work, side projects, general well being, books and novels etc…
 
-## What's Coming Next
+So there isn't one niche that I'm going to be covering nor am I interested in covering a niche. I'm just going to talk about what's on my mind and I hope someone out there finds whatever is written to be remotely useful or interesting to read.
 
-We have some exciting content planned for the coming weeks:
+Rest assured, I won't be using AI to generate actual blog content and I will not use AI to pretend to act as me. Every word I write is straight from me and my colleague and it will come from the good old, raw, blood pumping human heart!
 
-1. **Deep dive into our latest game engine**
-2. **Interview with our lead artist**
-3. **The making of our award-winning soundtrack**
-4. **Community spotlight: Meet our top players**
-
-## Join the Conversation
-
-We'd love to hear from you! Feel free to:
-
-- **Comment** on our posts
-- **Share** your own gaming experiences
-- **Suggest** topics you'd like us to cover
-- **Connect** with us on social media
-
-## Stay Updated
-
-Don't miss out on our latest posts! Subscribe to our newsletter or follow us on social media to stay in the loop.
-
----
-
-*Thank you for being part of the Sneaky Nuts community. Here's to many more adventures together!* 🚀
-
-**The Sneaky Nuts Team**
+Many thanks for reading
