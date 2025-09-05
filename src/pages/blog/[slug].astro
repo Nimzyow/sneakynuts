@@ -19,14 +19,6 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>{post.data.title} - Sneaky Nuts Blog</title>
-</head>
-<body>
 <div class="min-h-screen bg-[var(--color-primary)]">
   <!-- Navigation -->
   <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -121,38 +113,99 @@ const { Content } = await post.render();
   </article>
 </div>
 
-<style>
+<style is:global>
   .prose {
-    color: var(--color-text-secondary);
+    color: #a0a0a0 !important;
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
+    max-width: none !important;
   }
   
+  /* Override any conflicting styles */
+  .prose * {
+    box-sizing: border-box;
+  }
+  
+  /* Ensure markdown content is properly displayed */
+  .prose > * {
+    display: block !important;
+  }
+  
+  .prose > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  /* Force heading styles with higher specificity */
   .prose h1,
   .prose h2,
   .prose h3,
   .prose h4,
   .prose h5,
   .prose h6 {
-    color: white;
-    font-weight: bold;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+    display: block !important;
+  }
+  
+  /* Even more specific selectors */
+  article .prose h1,
+  article .prose h2,
+  article .prose h3,
+  article .prose h4,
+  article .prose h5,
+  article .prose h6 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    display: block !important;
   }
   
   .prose h1 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 1.5rem !important;
+    color: #ffffff !important;
   }
   
   .prose h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color-accent);
+    font-size: 2rem !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.25rem !important;
+    color: #ff6b35 !important;
+    border-bottom: 2px solid #ff6b35;
+    padding-bottom: 0.5rem;
   }
   
   .prose h3 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.5rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    color: #ffd700 !important;
+  }
+  
+  /* Ultra-specific selectors for the exact elements */
+  article .prose h2#technical-challenges,
+  article .prose h3#the-rendering-engine {
+    font-size: 2rem !important;
+    color: #ff6b35 !important;
+    font-weight: 700 !important;
+    display: block !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  article .prose h3#the-rendering-engine {
+    font-size: 1.5rem !important;
+    color: #ffd700 !important;
+  }
+  
+  .prose h4 {
+    font-size: 1.25rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+    color: #9d4edd !important;
   }
   
   .prose p {
@@ -172,12 +225,41 @@ const { Content } = await post.render();
   
   .prose ul,
   .prose ol {
-    margin-bottom: 1.5rem;
-    padding-left: 2rem;
+    margin-bottom: 1.5rem !important;
+    padding-left: 2rem !important;
   }
   
   .prose li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .prose ul li {
+    list-style-type: disc !important;
+  }
+  
+  .prose ol li {
+    list-style-type: decimal !important;
+  }
+  
+  .prose strong {
+    font-weight: 700 !important;
+    color: #ff6b35 !important;
+  }
+  
+  .prose em {
+    font-style: italic !important;
+    color: #ffd700 !important;
+  }
+  
+  .prose ul li {
+    list-style-type: disc !important;
+    margin-left: 1.5rem !important;
+  }
+  
+  .prose ol li {
+    list-style-type: decimal !important;
+    margin-left: 1.5rem !important;
   }
   
   .prose blockquote {
@@ -255,5 +337,3 @@ const { Content } = await post.render();
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
 </style>
-</body>
-</html>
