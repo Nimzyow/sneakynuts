@@ -10,7 +10,7 @@ featured: true
 
 # Sneaky Nuts Welcome Blog
 
-Creating a blog, am I in 2005 or something?
+Creating a blog, am I in 2005 or something? 🖊️
 
 Yes, this style of blog creation is a relic of the past, sure, but I feel it's still a wonderful avenue to release some steam and unleash a bit of creativity.
 
