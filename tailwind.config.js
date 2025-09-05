@@ -3,11 +3,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#3D5A80",
-        secondary: "#98C1D9",
-        accent: "#E0FBFC",
-        highlight: "#EE6C4D",
-        dark: "#293241",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        accent: "var(--color-accent)",
+        highlight: "var(--color-highlight)",
+        gold: "var(--color-gold)",
+        purple: "var(--color-purple)",
+        pink: "var(--color-pink)",
+        blue: "var(--color-blue)",
+        green: "var(--color-green)",
+        "text-primary": "var(--color-text-primary)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-dark": "var(--color-text-dark)",
       },
     },
   },

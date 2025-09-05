@@ -19,6 +19,10 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
+---
+title: `${post.data.title} - Sneaky Nuts Blog`
+---
+
 <div class="min-h-screen bg-[var(--color-primary)]">
   <!-- Navigation -->
   <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">

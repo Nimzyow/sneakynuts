@@ -60,51 +60,53 @@ const sortedPosts = blogCollection.sort((a: CollectionEntry<'blog'>, b: Collecti
         <div class="flex-1">
           <div id="blogPosts" class="space-y-8">
             {sortedPosts.map((post: CollectionEntry<'blog'>) => (
-              <article class="group bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-[1.02] transition-all duration-500 cursor-pointer" 
-                       data-author={post.data.author} 
-                       data-tags={post.data.tags?.join(',') || ''}>
-                <div class="flex gap-6">
-                  <!-- Post Emoji/Icon -->
-                  <div class="flex-shrink-0">
-                    <div class="text-5xl emoji" title={`Emoji: ${post.data.emoji || '📝'}`}>
-                      {post.data.emoji || '📝'}
+              <a href={`/blog/${post.slug}`} class="block group">
+                <article class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-[1.02] transition-all duration-500 cursor-pointer" 
+                         data-author={post.data.author} 
+                         data-tags={post.data.tags?.join(',') || ''}>
+                  <div class="flex gap-6">
+                    <!-- Post Emoji/Icon -->
+                    <div class="flex-shrink-0">
+                      <div class="text-5xl emoji" title={`Emoji: ${post.data.emoji || '📝'}`}>
+                        {post.data.emoji || '📝'}
+                      </div>
                     </div>
-                  </div>
-                  
-                  <!-- Post Content -->
-                  <div class="flex-1">
-                    <h2 class="text-3xl font-bold mb-4 text-white group-hover:text-[var(--color-accent)] transition-colors">
-                      {post.data.title}
-                    </h2>
-                    <p class="text-[var(--color-text-secondary)] mb-6 text-lg leading-relaxed">
-                      {post.data.description}
-                    </p>
                     
-                    <div class="flex flex-wrap gap-2 mb-6">
-                      {post.data.tags?.map((tag: string) => (
-                        <span class="px-3 py-1 bg-[var(--color-accent)]/20 text-[var(--color-accent)] rounded-full text-sm">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    <!-- Post Content -->
+                    <div class="flex-1">
+                      <h2 class="text-3xl font-bold mb-4 text-white group-hover:text-[var(--color-accent)] transition-colors">
+                        {post.data.title}
+                      </h2>
+                      <p class="text-[var(--color-text-secondary)] mb-6 text-lg leading-relaxed">
+                        {post.data.description}
+                      </p>
+                      
+                      <div class="flex flex-wrap gap-2 mb-6">
+                        {post.data.tags?.map((tag: string) => (
+                          <span class="px-3 py-1 bg-[var(--color-accent)]/20 text-[var(--color-accent)] rounded-full text-sm">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
 
-                    <div class="flex items-center justify-between text-sm text-[var(--color-text-secondary)] mb-6">
-                      <span>By <strong class="text-white">{post.data.author}</strong></span>
-                      <time datetime={post.data.pubDate.toISOString()}>
-                        {post.data.pubDate.toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}
-                      </time>
-                    </div>
+                      <div class="flex items-center justify-between text-sm text-[var(--color-text-secondary)] mb-6">
+                        <span>By <strong class="text-white">{post.data.author}</strong></span>
+                        <time datetime={post.data.pubDate.toISOString()}>
+                          {post.data.pubDate.toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
+                        </time>
+                      </div>
 
-                    <a href={`/blog/${post.slug}`} class="inline-flex items-center text-[var(--color-accent)] font-bold hover:text-[var(--color-highlight)] transition-colors text-lg">
-                      Read More →
-                    </a>
+                      <div class="inline-flex items-center text-[var(--color-accent)] font-bold group-hover:text-[var(--color-highlight)] transition-colors text-lg">
+                        Read More →
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </a>
             ))}
           </div>
         </div>
@@ -162,12 +164,10 @@ const sortedPosts = blogCollection.sort((a: CollectionEntry<'blog'>, b: Collecti
     </div>
   </section>
 </div>
-</body>
-</html>
 
 <script>
   // Get all posts and filter elements
-  const posts = document.querySelectorAll('article');
+  const posts = document.querySelectorAll('a[href*="/blog/"]');
   const authorFilter = document.getElementById('authorFilter') as HTMLSelectElement;
   const tagFilter = document.getElementById('tagFilter') as HTMLSelectElement;
   const postCount = document.getElementById('postCount');
@@ -183,17 +183,20 @@ const sortedPosts = blogCollection.sort((a: CollectionEntry<'blog'>, b: Collecti
     let visibleCount = 0;
 
     posts.forEach(post => {
-      const postAuthor = post.dataset.author;
-      const postTags = post.dataset.tags?.split(',') || [];
+      const article = post.querySelector('article');
+      if (!article) return;
+      
+      const postAuthor = article.dataset.author;
+      const postTags = article.dataset.tags?.split(',') || [];
       
       const authorMatch = !selectedAuthor || postAuthor === selectedAuthor;
       const tagMatch = !selectedTag || postTags.includes(selectedTag);
       
       if (authorMatch && tagMatch) {
-        post.style.display = 'block';
+        (post as HTMLElement).style.display = 'block';
         visibleCount++;
       } else {
-        post.style.display = 'none';
+        (post as HTMLElement).style.display = 'none';
       }
     });
 
