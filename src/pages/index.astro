@@ -2,434 +2,78 @@
 import "../styles/globals.css";
 ---
 
----
-title: "Sneaky Nuts - Creative Projects & Blog"
-description: "Two creative minds building cool stuff. Home to Recommends app, upcoming Annai smartwatch app, and our blog about all sorts of things."
----
-
 <head>
   <meta charset="UTF-8">
+  <title>SneakyNuts</title>
+  <meta name="description" content="SneakyNuts">
 </head>
 
-<div class="min-h-screen bg-[var(--color-primary)] overflow-x-hidden">
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] rounded-lg flex items-center justify-center">
-            <span class="text-2xl">🎮</span>
-          </div>
-          <span class="text-2xl font-bold text-white">Sneaky Nuts</span>
-        </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#projects" class="text-white hover:text-[var(--color-accent)] transition-colors">Projects</a>
-          <a href="#about" class="text-white hover:text-[var(--color-accent)] transition-colors">About</a>
-          <a href="/blog" class="text-white hover:text-[var(--color-accent)] transition-colors">Blog</a>
-          <a href="#contact" class="text-white hover:text-[var(--color-accent)] transition-colors">Contact</a>
-        </div>
-        <a href="/blog" class="bg-[var(--color-accent)] text-[var(--color-text-dark)] px-6 py-2 rounded-full font-bold hover:bg-[var(--color-highlight)] transition-all transform hover:scale-105">
-          Read Blog
-        </a>
-      </div>
+<div class="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center">
+  <h1 class="text-5xl md:text-7xl font-semibold tracking-[0.25em] uppercase">
+    SneakyNuts
+  </h1>
+
+  <div class="logo-strip">
+    <div class="logo-track">
+      <span class="logo-link glow-purple">recommends</span>
+      <span class="logo-link glow-green">Annai</span>
     </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Animated Background -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 left-20 w-32 h-32 bg-[var(--color-accent)] rounded-full opacity-20 animate-pulse"></div>
-      <div class="absolute top-40 right-32 w-24 h-24 bg-[var(--color-highlight)] rounded-full opacity-30 animate-bounce"></div>
-      <div class="absolute bottom-32 left-1/3 w-16 h-16 bg-[var(--color-purple)] rounded-full opacity-25 animate-ping"></div>
-      <div class="absolute bottom-20 right-1/4 w-20 h-20 bg-[var(--color-pink)] rounded-full opacity-20 animate-pulse"></div>
-    </div>
-    
-    <!-- Geometric Shapes -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 border-2 border-[var(--color-accent)] rotate-45 animate-spin-slow"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-48 h-48 border-2 border-[var(--color-highlight)] rotate-12 animate-pulse"></div>
-    </div>
-
-    <div class="text-center z-10 max-w-6xl mx-auto px-6">
-      <div class="mb-8">
-        <h1 class="text-7xl md:text-9xl font-black mb-6 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-highlight)] to-[var(--color-purple)] bg-clip-text text-transparent animate-gradient">
-          SNEAKY NUTS
-        </h1>
-        <p class="text-3xl md:text-4xl mb-8 text-white font-light">
-          Two Guys Being <span class="text-[var(--color-accent)] font-bold">Creative</span> and Making Stuff
-        </p>
-      </div>
-      
-      <p class="text-xl md:text-2xl mb-12 text-[var(--color-text-secondary)] max-w-4xl mx-auto leading-relaxed">
-        We build apps, write about our experiences, and share our journey. 
-        From Recommends on the App Store to upcoming smartwatch apps, we're always creating something new.
-      </p>
-      
-      <div class="flex flex-wrap justify-center gap-6 mb-16">
-        <a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="group relative px-10 py-5 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] rounded-full font-bold text-xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[var(--color-accent)]/50">
-          <span class="relative z-10">Try Recommends</span>
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-highlight)] to-[var(--color-accent)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </a>
-        <a href="/blog" class="px-10 py-5 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded-full font-bold text-xl hover:bg-[var(--color-accent)] hover:text-[var(--color-text-dark)] transition-all duration-300 hover:scale-105">
-          Read Our Blog
-        </a>
-      </div>
-
-      <!-- Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-accent)] mb-2">1</div>
-          <div class="text-[var(--color-text-secondary)]">App Live</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-highlight)] mb-2">2</div>
-          <div class="text-[var(--color-text-secondary)]">Creative Minds</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-purple)] mb-2">3+</div>
-          <div class="text-[var(--color-text-secondary)]">Projects</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-pink)] mb-2">∞</div>
-          <div class="text-[var(--color-text-secondary)]">Ideas</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects Section -->
-  <section id="projects" class="py-32 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-          Our <span class="text-[var(--color-accent)]">Projects</span>
-        </h2>
-        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-          The stuff we're building and working on. Some are live, some are coming soon.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 - Recommends -->
-        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-highlight)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="text-6xl mb-6">🍽️</div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Recommends</h3>
-            <p class="text-[var(--color-text-secondary)] mb-6">
-              Community-driven discovery app that helps you find amazing places and experiences. Get honest recommendations on dishes, not just restaurants.
-            </p>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-2">
-                <span class="text-[var(--color-gold)]">★★★★★</span>
-                <span class="text-[var(--color-text-secondary)]">5.0</span>
-              </div>
-              <div class="text-[var(--color-accent)] font-bold">Live on App Store</div>
-            </div>
-            <a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] py-3 rounded-lg font-bold hover:scale-105 transition-transform block text-center">
-              Download Now
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 - Annai -->
-        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-purple)]/20 to-[var(--color-pink)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="text-6xl mb-6">⌚</div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Annai</h3>
-            <p class="text-[var(--color-text-secondary)] mb-6">
-              A smart watch app that's going to be pretty cool. Details coming soon, but we're excited about this one.
-            </p>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-2">
-                <span class="text-[var(--color-text-secondary)]">🚧</span>
-                <span class="text-[var(--color-text-secondary)]">In Development</span>
-              </div>
-              <div class="text-[var(--color-accent)] font-bold">Coming Soon</div>
-            </div>
-            <div class="w-full bg-gradient-to-r from-[var(--color-purple)] to-[var(--color-pink)] text-white py-3 rounded-lg font-bold text-center opacity-75">
-              Details Coming Soon
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 - Game -->
-        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-blue)]/20 to-[var(--color-green)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="text-6xl mb-6">🎮</div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Game</h3>
-            <p class="text-[var(--color-text-secondary)] mb-6">
-              We're working on a game, but nothing is ready to announce yet. Stay tuned for updates!
-            </p>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-2">
-                <span class="text-[var(--color-text-secondary)]">🤫</span>
-                <span class="text-[var(--color-text-secondary)]">Top Secret</span>
-              </div>
-              <div class="text-[var(--color-accent)] font-bold">TBA</div>
-            </div>
-            <div class="w-full bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-green)] text-white py-3 rounded-lg font-bold text-center opacity-75">
-              Nothing to Announce Yet
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-32 bg-[var(--color-primary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-            We're <span class="text-[var(--color-accent)]">Sneaky Nuts</span>
-          </h2>
-          <p class="text-xl text-[var(--color-text-secondary)] mb-8 leading-relaxed">
-            Just two creative minds who love building stuff and sharing our journey. 
-            We make apps, write about our experiences, and document the wild ride of being indie creators.
-          </p>
-          <div class="grid grid-cols-2 gap-8 mb-8">
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-accent)] mb-2">2</div>
-              <div class="text-[var(--color-text-secondary)]">Creative Minds</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-highlight)] mb-2">1</div>
-              <div class="text-[var(--color-text-secondary)]">App Live</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-purple)] mb-2">∞</div>
-              <div class="text-[var(--color-text-secondary)]">Ideas</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-pink)] mb-2">0</div>
-              <div class="text-[var(--color-text-secondary)]">Corporate BS</div>
-            </div>
-          </div>
-          <a href="/blog" class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-block">
-            Read Our Story
-          </a>
-        </div>
-        <div class="relative">
-          <!-- Team Photo Mockup -->
-          <div class="relative">
-            <div class="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] p-8 rounded-2xl">
-              <div class="flex justify-center gap-8">
-                <div class="w-24 h-24 bg-[var(--color-purple)] rounded-full flex items-center justify-center text-3xl">👨‍💻</div>
-                <div class="w-24 h-24 bg-[var(--color-pink)] rounded-full flex items-center justify-center text-3xl">👨‍🎨</div>
-              </div>
-              <div class="text-center mt-6">
-                <div class="text-2xl font-bold text-[var(--color-text-dark)]">The Dynamic Duo</div>
-                <div class="text-[var(--color-text-dark)] opacity-80">Two guys being creative and making stuff</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Values Section -->
-  <section class="py-32 bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-          Our <span class="text-[var(--color-accent)]">Values</span>
-        </h2>
-        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-          The principles that guide everything we do. No corporate BS, just real values.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center group">
-          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-4xl">🚫</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-white">No Corporate BS</h3>
-          <p class="text-[var(--color-text-secondary)]">
-            No attendance dashboards, no forced office days, no daily standups at the same time every day. We work when we're productive, not when a calendar says so.
-          </p>
-        </div>
-
-        <div class="text-center group">
-          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-4xl">⚡</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-white">Create, Don't Ask</h3>
-          <p class="text-[var(--color-text-secondary)]">
-            We build stuff instead of seeking permission. No escalating to execs for every idea. If it's good, we make it happen.
-          </p>
-        </div>
-
-        <div class="text-center group">
-          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-4xl">🎨</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-white">Creative Freedom</h3>
-          <p class="text-[var(--color-text-secondary)]">
-            No pigeon-holing, no rigid job descriptions. We're free to innovate, experiment, and create whatever we think is cool.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-          Get In <span class="text-[var(--color-accent)]">Touch</span>
-        </h2>
-        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-          Want to chat about our projects, share feedback, or just say hi? We're always up for a conversation!
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-16">
-        <div>
-          <div class="space-y-8">
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center">
-                <span class="text-xl">📧</span>
-              </div>
-              <div>
-                <div class="text-white font-bold">Email</div>
-                <div class="text-[var(--color-text-secondary)]">hello@sneakynuts.com</div>
-              </div>
-            </div>
-
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center">
-                <span class="text-xl">🐦</span>
-              </div>
-              <div>
-                <div class="text-white font-bold">Twitter</div>
-                <div class="text-[var(--color-text-secondary)]">@sneakynuts</div>
-              </div>
-            </div>
-
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center">
-                <span class="text-xl">🌍</span>
-              </div>
-              <div>
-                <div class="text-white font-bold">Location</div>
-                <div class="text-[var(--color-text-secondary)]">Wherever we are</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12">
-            <h3 class="text-2xl font-bold mb-6 text-white">Follow Us</h3>
-            <div class="flex space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">🐦</span>
-              </div>
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">📘</span>
-              </div>
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">📷</span>
-              </div>
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-gold)] to-[var(--color-accent)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">💼</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl">
-          <form class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <input type="text" placeholder="First Name" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
-              <input type="text" placeholder="Last Name" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
-            </div>
-            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
-            <textarea placeholder="Your Message" rows="6" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-none"></textarea>
-            <button class="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-16 bg-[var(--color-primary)] border-t border-[var(--color-text-secondary)]/20">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8 mb-12">
-        <div>
-          <div class="flex items-center space-x-2 mb-6">
-            <div class="w-8 h-8 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] rounded-lg flex items-center justify-center">
-              <span class="text-sm">🎮</span>
-            </div>
-            <span class="text-xl font-bold text-white">Sneaky Nuts</span>
-          </div>
-          <p class="text-[var(--color-text-secondary)] text-sm">
-            Two creative minds building cool stuff and sharing our journey. From apps to blog posts, we're always creating something new.
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-bold mb-6 text-white">Projects</h3>
-          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
-            <li><a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="hover:text-[var(--color-accent)] transition-colors">Recommends</a></li>
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Annai (Coming Soon)</a></li>
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Game (TBA)</a></li>
-            <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-bold mb-6 text-white">Company</h3>
-          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
-            <li><a href="#about" class="hover:text-[var(--color-accent)] transition-colors">About Us</a></li>
-            <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-            <li><a href="#contact" class="hover:text-[var(--color-accent)] transition-colors">Contact</a></li>
-            <li><a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="hover:text-[var(--color-accent)] transition-colors">App Store</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-bold mb-6 text-white">Connect</h3>
-          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Twitter</a></li>
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">GitHub</a></li>
-            <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">RSS Feed</a></li>
-            <li><a href="#contact" class="hover:text-[var(--color-accent)] transition-colors">Email Us</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="border-t border-[var(--color-text-secondary)]/20 pt-8 text-center">
-        <p class="text-[var(--color-text-secondary)] text-sm">
-          © 2024 Sneaky Nuts. All rights reserved. Two guys being creative and making stuff.
-        </p>
-      </div>
-    </div>
-  </footer>
+  </div>
 </div>
 
 <style>
-  @keyframes gradient {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  .logo-strip {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
   }
-  
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 3s ease infinite;
+
+  .logo-track {
+    display: inline-flex;
+    gap: 3rem;
+    justify-content: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    animation: logo-marquee 10s linear infinite;
   }
-  
-  .animate-spin-slow {
-    animation: spin 20s linear infinite;
+
+  .logo-link {
+    opacity: 0.25;
+    transition:
+      color 200ms ease,
+      text-shadow 200ms ease,
+      opacity 200ms ease,
+      transform 200ms ease;
+    cursor: default;
+  }
+
+  .logo-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .logo-link.glow-purple:hover {
+    color: #a855f7;
+    text-shadow: 0 0 18px rgba(168, 85, 247, 0.9);
+  }
+
+  .logo-link.glow-green:hover {
+    color: #22c55e;
+    text-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+  }
+
+  .logo-strip:hover .logo-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes logo-marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 </style>
