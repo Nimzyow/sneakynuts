@@ -6,14 +6,30 @@ import "../styles/globals.css";
   <meta charset="UTF-8">
   <title>SneakyNuts</title>
   <meta name="description" content="SneakyNuts">
+  <style>
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
-<div class="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center">
-  <h1 class="text-5xl md:text-7xl font-semibold tracking-[0.25em] uppercase">
+<body>
+<div class="sidebar-nav">
+  <div class="sidebar-item active" data-project="0">Home</div>
+  <div class="sidebar-item" data-project="1">01</div>
+  <div class="sidebar-item" data-project="2">02</div>
+  <div class="sidebar-item" data-project="3">03</div>
+  <div class="sidebar-item" data-project="4">04</div>
+  <div class="sidebar-item" data-project="5">05</div>
+</div>
+
+<div class="snap-section main-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="0">
+  <h1 class="text-5xl md:text-7xl font-semibold tracking-[0.25em] uppercase anomaly-text">
     SneakyNuts
   </h1>
   
-  <p class="mt-2 text-sm md:text-base tracking-wider opacity-60 text-gray-400">
+  <p class="mt-2 text-sm md:text-base tracking-[0.5em] opacity-60 text-gray-400">
     Architecting digital anomalies
   </p>
 
@@ -27,15 +43,165 @@ import "../styles/globals.css";
     </div>
   </div>
 
-  <div class="logo-detail" id="logo-detail" aria-hidden="false">
-    <h2 class="logo-detail__title" id="logo-detail-title">Placeholder title</h2>
-    <p class="logo-detail__body" id="logo-detail-body">
-      Placeholder text for this section. Click a logo above to reveal some details.
+  <button id="begin-btn" class="begin-button">BEGIN</button>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="1">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-purple">Recommends</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 01</span>
+      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
+      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Discover your next favorite meal. Unbiased, dish-level recommendations from real eaters. Never eat a disappointing meal again.
+    </p>
+    <a href="https://recommends.app/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all">Visit →</a>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="2">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-green">Annai</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 02</span>
+      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
+      <span class="text-xs tracking-widest opacity-60">BUILDING</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Curiosity on your wrist.
     </p>
   </div>
 </div>
 
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="3">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-blue">Nebula</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 03</span>
+      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
+      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Placeholder copy for Nebula. Describe the kind of world, experience, or product you imagine here.
+    </p>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="4">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-red">Cipher</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 04</span>
+      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
+      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Placeholder copy for Cipher. Maybe this is something cryptic, secure, or mysterious—write that story later.
+    </p>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="5">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-orange">Vault</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 05</span>
+      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
+      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Placeholder copy for Vault. A safe place for ideas, data, or something entirely different—fill in the details when you are ready.
+    </p>
+  </div>
+</div>
+</body>
+
 <style>
+  .sidebar-nav {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 100;
+  }
+
+  .sidebar-item {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555555;
+    cursor: pointer;
+    transition: color 200ms ease;
+  }
+
+  .sidebar-item:hover {
+    color: #a1a1aa;
+  }
+
+  .sidebar-item.active {
+    color: #ffffff;
+  }
+
+  .project-section {
+    opacity: 1;
+    transition: opacity 300ms ease;
+  }
+
+  .project-content--fade {
+    animation: fadeIn 500ms ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .main-section {
+    min-height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .anomaly-text {
+    position: relative;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 2px;
+  }
+
+  .anomaly-text:hover {
+    animation: glitch-bw 3s infinite;
+  }
+
+  @keyframes glitch-bw {
+    0% { text-shadow: 1.5px 0px 0px rgba(255,255,255,0.6), -1.5px 0px 0px rgba(200,200,200,0.4); transform: translate(0); }
+    20% { text-shadow: -2.5px 0px 0px rgba(255,255,255,0.5), 2.5px 0px 0px rgba(150,150,150,0.5); transform: translate(1.5px, -1px); }
+    40% { text-shadow: 2.5px 0px 1px rgba(180,180,180,0.5), -2.5px 0px 1px rgba(255,255,255,0.4); transform: translate(-1.5px, 1px); }
+    60% { text-shadow: 2px 0.5px 0px rgba(200,200,200,0.45), -2px -0.5px 0px rgba(255,255,255,0.5); transform: translate(1px, -0.5px); }
+    100% { text-shadow: 1.5px 0px 0px rgba(255,255,255,0.6), -1.5px 0px 0px rgba(200,200,200,0.4); transform: translate(0); }
+  }
+
   .logo-strip {
     margin-top: 1.5rem;
     width: 100%;
@@ -73,6 +239,31 @@ import "../styles/globals.css";
     text-shadow: 0 0 18px rgba(168, 85, 247, 0.9);
   }
 
+  h2.glow-purple {
+    color: #a855f7;
+    text-shadow: 0 0 18px rgba(168, 85, 247, 0.9);
+  }
+
+  h2.glow-green {
+    color: #22c55e;
+    text-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+  }
+
+  h2.glow-blue {
+    color: rgb(34, 69, 197);
+    text-shadow: 0 0 18px rgba(34, 80, 197, 0.9);
+  }
+
+  h2.glow-red {
+    color: rgb(197, 34, 45);
+    text-shadow: 0 0 18px rgba(197, 34, 53, 0.9);
+  }
+
+  h2.glow-orange {
+    color: rgb(233, 131, 23);
+    text-shadow: 0 0 18px rgba(197, 86, 34, 0.9);
+  }
+
   .logo-link.glow-green:hover {
     color: #22c55e;
     text-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
@@ -97,6 +288,32 @@ import "../styles/globals.css";
     animation-play-state: paused;
   }
 
+  .begin-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    border: 1px solid #555555;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .begin-button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  }
+
+  .begin-button.hidden {
+    display: none;
+  }
+
   @keyframes logo-marquee {
     0% {
       transform: translateX(100%);
@@ -108,7 +325,7 @@ import "../styles/globals.css";
 
   .logo-detail {
     margin-top: 2.5rem;
-    max-width: 40rem;
+    width: fit-content;
     padding: 0 1.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -117,10 +334,24 @@ import "../styles/globals.css";
     overflow: visible;
     transform: translateY(8px);
     border-top: 1px solid #27272a;
+    animation: pulse-border 3s ease-in-out infinite;
     transition:
       max-height 300ms ease,
       opacity 250ms ease,
       transform 250ms ease;
+    min-width: 200px;
+  }
+
+  @keyframes pulse-border {
+    0% {
+      border-color: #27272a;
+    }
+    50% {
+      border-color: #555555;
+    }
+    100% {
+      border-color: #27272a;
+    }
   }
 
   .logo-detail--open {
@@ -150,61 +381,47 @@ import "../styles/globals.css";
 <script>
   if (typeof window !== "undefined") {
     window.addEventListener("DOMContentLoaded", () => {
-      const panel = document.getElementById("logo-detail");
-      const titleEl = document.getElementById("logo-detail-title");
-      const bodyEl = document.getElementById("logo-detail-body");
-      const links = document.querySelectorAll(".logo-link");
+      const beginBtn = document.getElementById("begin-btn");
+      const sidebarItems = document.querySelectorAll(".sidebar-item");
 
-      if (!panel || !titleEl || !bodyEl || !links.length) return;
-
-      const contentByKey = {
-        recommends: {
-          title: "Recommends",
-          body:
-            "Placeholder copy for Recommends. Use this space to explain what it is, why it exists, and what makes it special.",
-        },
-        annai: {
-          title: "Annai",
-          body:
-            "Placeholder copy for Annai. Share a short vision, concept, or teaser about what this project will become.",
-        },
-        nebula: {
-          title: "Nebula",
-          body:
-            "Placeholder copy for Nebula. Describe the kind of world, experience, or product you imagine here.",
-        },
-        cipher: {
-          title: "Cipher",
-          body:
-            "Placeholder copy for Cipher. Maybe this is something cryptic, secure, or mysterious—write that story later.",
-        },
-        vault: {
-          title: "Vault",
-          body:
-            "Placeholder copy for Vault. A safe place for ideas, data, or something entirely different—fill in the details when you are ready.",
-        },
-      };
-
-      let openFor = null;
-
-      links.forEach((link) => {
-        link.addEventListener("click", () => {
-          const key = (link.textContent || "").trim().toLowerCase();
-          const info = contentByKey[key];
-          if (!info) return;
-
-          if (openFor === key) {
-            panel.classList.remove("logo-detail--open");
-            panel.setAttribute("aria-hidden", "true");
-            openFor = null;
-            return;
+      if (beginBtn) {
+        beginBtn.addEventListener("click", () => {
+          beginBtn.classList.add("hidden");
+          // Scroll to first project section
+          const firstProject = document.querySelector('[data-section="1"]');
+          if (firstProject) {
+            firstProject.scrollIntoView({ behavior: "smooth", block: "start" });
           }
+        });
+      }
 
-          openFor = key;
-          titleEl.textContent = info.title;
-          bodyEl.textContent = info.body;
-          panel.classList.add("logo-detail--open");
-          panel.setAttribute("aria-hidden", "false");
+      // Update sidebar on scroll
+      const sections = document.querySelectorAll(".snap-section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionNum = entry.target.getAttribute("data-section");
+            sidebarItems.forEach((item) => {
+              item.classList.remove("active");
+            });
+            const activeItem = document.querySelector(`[data-project="${sectionNum}"]`);
+            if (activeItem) {
+              activeItem.classList.add("active");
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach((section) => observer.observe(section));
+
+      // Sidebar navigation
+      sidebarItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const sectionNum = item.getAttribute("data-project");
+          const section = document.querySelector(`[data-section="${sectionNum}"]`);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         });
       });
     });
