@@ -15,6 +15,16 @@ import "../styles/globals.css";
 </head>
 
 <body>
+<div id="boot-sequence" class="boot-sequence hidden">
+  <div class="boot-line">SYSTEM INITIALIZING...</div>
+  <div class="boot-line">LOADING PROJECT SUITE...</div>
+  <div class="boot-line"></div>
+  <div class="boot-bar">
+    <div class="boot-bar-fill"></div>
+  </div>
+  <div class="boot-percentage">100%</div>
+</div>
+
 <div class="sidebar-nav">
   <div class="sidebar-item active" data-project="0">Home</div>
   <div class="sidebar-item" data-project="1">01</div>
@@ -22,6 +32,7 @@ import "../styles/globals.css";
   <div class="sidebar-item" data-project="3">03</div>
   <div class="sidebar-item" data-project="4">04</div>
   <div class="sidebar-item" data-project="5">05</div>
+  <div class="sidebar-item" data-project="6">?</div>
 </div>
 
 <div class="snap-section main-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="0">
@@ -116,6 +127,32 @@ import "../styles/globals.css";
     </p>
   </div>
 </div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="6">
+  <div class="project-content project-content--fade">
+    <div class="terminal-window">
+      <div class="terminal-prompt">
+        <span class="terminal-prefix">guest@sneakynuts:~$</span>
+        <span id="terminal-command" class="typewriter-command"></span>
+        <span class="terminal-cursor" id="terminal-cursor">_</span>
+      </div>
+      <div class="terminal-response" id="whoami-response" style="display: none; margin-top: 1rem;">
+        <div>Two creators architecting digital anomalies. We don't build apps; we deploy deviations. One handles the logic (00001), the other the experience (00002).</div>
+      </div>
+      
+      <div class="terminal-prompt" style="display: none; margin-top: 1rem;" id="uptime-prompt">
+        <span class="terminal-prefix">guest@sneakynuts:~$</span>
+        <span id="terminal-command-2" class="typewriter-command"></span>
+        <span class="terminal-cursor">_</span>
+      </div>
+      <div class="terminal-response" id="uptime-response" style="display: none; margin-top: 1rem;">
+        <div>OS: Sneakynuts_v1.0.4</div>
+        <div>UPTIME: <span id="uptime-days">742</span> Days</div>
+        <div>KERNEL: Anomalous_Build_09</div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 <style>
@@ -145,6 +182,23 @@ import "../styles/globals.css";
 
   .sidebar-item.active {
     color: #ffffff;
+    position: relative;
+  }
+
+  .sidebar-item.active::after {
+    content: "█";
+    display: inline-block;
+    margin-left: 0.3rem;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
   }
 
   .project-section {
@@ -188,6 +242,24 @@ import "../styles/globals.css";
     cursor: pointer;
     color: #ffffff;
     letter-spacing: 2px;
+    transition: all 600ms ease;
+  }
+
+  .anomaly-text.boot-up {
+    animation: headerBootUp 600ms ease forwards;
+  }
+
+  @keyframes headerBootUp {
+    0% {
+      font-size: inherit;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      font-size: 2rem;
+      opacity: 0.7;
+      transform: translateY(-2rem);
+    }
   }
 
   .anomaly-text:hover {
@@ -286,6 +358,176 @@ import "../styles/globals.css";
 
   .logo-strip:hover .logo-track {
     animation-play-state: paused;
+  }
+
+  .boot-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-family: monospace;
+    color: #00ff00;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .boot-sequence.hidden {
+    display: none;
+  }
+
+  .boot-line {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    animation: fadeInLine 200ms ease forwards;
+    opacity: 0;
+  }
+
+  .boot-line:nth-child(1) { animation-delay: 0ms; }
+  .boot-line:nth-child(2) { animation-delay: 150ms; }
+  .boot-line:nth-child(3) { animation-delay: 300ms; }
+  .boot-line:nth-child(4) { animation-delay: 450ms; }
+  .boot-line:nth-child(5) { animation-delay: 600ms; }
+
+  @keyframes fadeInLine {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .boot-bar {
+    width: 300px;
+    height: 1rem;
+    border: 1px solid #00ff00;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .boot-bar-fill {
+    height: 100%;
+    background-color: #00ff00;
+    width: 0%;
+    animation: fillBar 800ms ease forwards;
+  }
+
+  @keyframes fillBar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
+  .boot-percentage {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    animation: fadeInLine 200ms ease forwards 900ms;
+    opacity: 0;
+  }
+
+  .terminal-window {
+    font-family: monospace;
+    color: #00ff00;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ff00;
+    padding: 2rem;
+    width: 600px;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .terminal-line {
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .terminal-prompt {
+    letter-spacing: 0.05em;
+    cursor: text;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .terminal-prefix {
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  #terminal-command {
+    font-weight: bold;
+  }
+
+  .typewriter-command {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    flex-shrink: 0;
+  }
+
+  .typewriter-command.typing {
+    animation: typeCommand 1.2s steps(6, end) forwards;
+  }
+
+  @keyframes typeCommand {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 6.5ch;
+    }
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    margin-left: 0.2rem;
+    animation: cursorBlink 1s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes cursorBlink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .terminal-response {
+    word-wrap: break-word;
+    line-height: 1.6;
+    animation: fadeInLine 500ms ease forwards;
+  }
+
+  .typewriter {
+    overflow: hidden;
+    white-space: pre-wrap;
+    border-right: 2px solid #00ff00;
+    animation: none;
+  }
+
+  .typewriter.active {
+    animation: typewriter 2s steps(75, end) forwards;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 
   .begin-button {
@@ -387,16 +629,58 @@ import "../styles/globals.css";
       if (beginBtn) {
         beginBtn.addEventListener("click", () => {
           beginBtn.classList.add("hidden");
-          // Scroll to first project section
-          const firstProject = document.querySelector('[data-section="1"]');
-          if (firstProject) {
-            firstProject.scrollIntoView({ behavior: "smooth", block: "start" });
+          
+          // Show boot sequence
+          const bootSequence = document.getElementById("boot-sequence");
+          if (bootSequence) {
+            bootSequence.classList.remove("hidden");
           }
+          
+          // Play boot-up animation on header
+          const header = document.querySelector(".anomaly-text");
+          if (header) {
+            header.classList.add("boot-up");
+          }
+          
+          // Light up the 01 sidebar item
+          sidebarItems.forEach((item) => {
+            item.classList.remove("active");
+          });
+          const project01 = document.querySelector('[data-project="1"]');
+          if (project01) {
+            project01.classList.add("active");
+          }
+          
+          // Hide boot sequence and scroll to first project after 1.2 seconds
+          setTimeout(() => {
+            if (bootSequence) {
+              bootSequence.classList.add("hidden");
+            }
+            const firstProject = document.querySelector('[data-section="1"]');
+            if (firstProject) {
+              firstProject.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 1200);
         });
+      }
+
+      // Calculate uptime days from 12/30/2024
+      function calculateUptimeDays() {
+        const startDate = new Date("2024-12-30");
+        const today = new Date();
+        const timeDiff = today - startDate;
+        const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        return daysDiff;
+      }
+
+      const uptimeDaysSpan = document.getElementById("uptime-days");
+      if (uptimeDaysSpan) {
+        uptimeDaysSpan.textContent = calculateUptimeDays();
       }
 
       // Update sidebar on scroll
       const sections = document.querySelectorAll(".snap-section");
+      const header = document.querySelector(".anomaly-text");
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -407,6 +691,65 @@ import "../styles/globals.css";
             const activeItem = document.querySelector(`[data-project="${sectionNum}"]`);
             if (activeItem) {
               activeItem.classList.add("active");
+            }
+            
+            // Reset header size when returning to home
+            if (sectionNum === "0" && header) {
+              header.classList.remove("boot-up");
+            }
+            
+            // Trigger interactive whoami for section 6
+            if (sectionNum === "6") {
+              const terminalCommand = document.getElementById("terminal-command");
+              const whoamiResponse = document.getElementById("whoami-response");
+              const terminalPrompt = document.querySelector(".terminal-prompt");
+              
+              // Auto-start typing when section comes into view
+              if (terminalCommand && !terminalCommand.dataset.started) {
+                terminalCommand.dataset.started = "true";
+                terminalCommand.textContent = "whoami";
+                terminalCommand.classList.add("typing");
+              }
+              
+              // Setup enter key listener if not already done
+              if (terminalPrompt && !terminalPrompt.dataset.interactive) {
+                terminalPrompt.dataset.interactive = "true";
+                
+                const terminalCommand2 = document.getElementById("terminal-command-2");
+                const uptimePrompt = document.getElementById("uptime-prompt");
+                const uptimeResponse = document.getElementById("uptime-response");
+                
+                document.addEventListener("keydown", function handleTerminalEnter(e) {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    
+                    // First Enter: show whoami response and start uptime
+                    if (whoamiResponse && whoamiResponse.style.display === "none") {
+                      if (terminalCommand) {
+                        terminalCommand.classList.remove("typing");
+                        whoamiResponse.style.display = "block";
+                      }
+                      
+                      // Start typing uptime command
+                      setTimeout(() => {
+                        if (uptimePrompt && terminalCommand2) {
+                          uptimePrompt.style.display = "flex";
+                          terminalCommand2.textContent = "uptime";
+                          terminalCommand2.classList.add("typing");
+                        }
+                      }, 500);
+                    }
+                    // Second Enter: show uptime response
+                    else if (uptimeResponse && uptimeResponse.style.display === "none") {
+                      if (terminalCommand2) {
+                        terminalCommand2.classList.remove("typing");
+                        uptimeResponse.style.display = "block";
+                      }
+                      document.removeEventListener("keydown", handleTerminalEnter);
+                    }
+                  }
+                });
+              }
             }
           }
         });
