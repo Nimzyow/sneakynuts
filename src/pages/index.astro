@@ -15,9 +15,19 @@ import "../styles/globals.css";
 
   <div class="logo-strip">
     <div class="logo-track">
-      <span class="logo-link glow-purple">recommends</span>
+      <span class="logo-link glow-purple">Recommends</span>
       <span class="logo-link glow-green">Annai</span>
+      <span class="logo-link glow-blue">Nebula</span>
+      <span class="logo-link glow-red">Cipher</span>
+      <span class="logo-link glow-orange">Vault</span>
     </div>
+  </div>
+
+  <div class="logo-detail" id="logo-detail" aria-hidden="false">
+    <h2 class="logo-detail__title" id="logo-detail-title">Placeholder title</h2>
+    <p class="logo-detail__body" id="logo-detail-body">
+      Placeholder text for this section. Click a logo above to reveal some details.
+    </p>
   </div>
 </div>
 
@@ -46,7 +56,7 @@ import "../styles/globals.css";
       text-shadow 200ms ease,
       opacity 200ms ease,
       transform 200ms ease;
-    cursor: default;
+    cursor: pointer;
   }
 
   .logo-link:hover {
@@ -64,6 +74,21 @@ import "../styles/globals.css";
     text-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
   }
 
+  .logo-link.glow-blue:hover {
+    color:rgb(34, 69, 197);
+    text-shadow: 0 0 18px rgba(34, 80, 197, 0.9);
+  }
+
+  .logo-link.glow-red:hover {
+    color:rgb(197, 34, 45);
+    text-shadow: 0 0 18px rgba(197, 34, 53, 0.9);
+  }
+
+    .logo-link.glow-orange:hover {
+    color:rgb(233, 131, 23);
+    text-shadow: 0 0 18px rgba(197, 86, 34, 0.9);
+  }
+
   .logo-strip:hover .logo-track {
     animation-play-state: paused;
   }
@@ -76,4 +101,104 @@ import "../styles/globals.css";
       transform: translateX(-100%);
     }
   }
+
+  .logo-detail {
+    margin-top: 2.5rem;
+    max-width: 40rem;
+    padding: 0 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(8px);
+    border-top: 1px solid #27272a;
+    transition:
+      max-height 300ms ease,
+      opacity 250ms ease,
+      transform 250ms ease;
+  }
+
+  .logo-detail--open {
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .logo-detail__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .logo-detail__body {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
+  }
 </style>
+
+<script>
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", () => {
+      const panel = document.getElementById("logo-detail");
+      const titleEl = document.getElementById("logo-detail-title");
+      const bodyEl = document.getElementById("logo-detail-body");
+      const links = document.querySelectorAll(".logo-link");
+
+      if (!panel || !titleEl || !bodyEl || !links.length) return;
+
+      const contentByKey = {
+        recommends: {
+          title: "Recommends",
+          body:
+            "Placeholder copy for Recommends. Use this space to explain what it is, why it exists, and what makes it special.",
+        },
+        annai: {
+          title: "Annai",
+          body:
+            "Placeholder copy for Annai. Share a short vision, concept, or teaser about what this project will become.",
+        },
+        nebula: {
+          title: "Nebula",
+          body:
+            "Placeholder copy for Nebula. Describe the kind of world, experience, or product you imagine here.",
+        },
+        cipher: {
+          title: "Cipher",
+          body:
+            "Placeholder copy for Cipher. Maybe this is something cryptic, secure, or mysterious—write that story later.",
+        },
+        vault: {
+          title: "Vault",
+          body:
+            "Placeholder copy for Vault. A safe place for ideas, data, or something entirely different—fill in the details when you are ready.",
+        },
+      };
+
+      let openFor = null;
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          const key = (link.textContent || "").trim().toLowerCase();
+          const info = contentByKey[key];
+          if (!info) return;
+
+          if (openFor === key) {
+            panel.classList.remove("logo-detail--open");
+            panel.setAttribute("aria-hidden", "true");
+            openFor = null;
+            return;
+          }
+
+          openFor = key;
+          titleEl.textContent = info.title;
+          bodyEl.textContent = info.body;
+          panel.classList.add("logo-detail--open");
+          panel.setAttribute("aria-hidden", "false");
+        });
+      });
+    });
+  }
+</script>
