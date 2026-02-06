@@ -62,8 +62,8 @@ import "../styles/globals.css";
     <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-purple">Recommends</h2>
     <div class="flex items-center justify-center gap-4 mb-6">
       <span class="text-xs tracking-widest opacity-60">PROJECT 01</span>
-      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
-      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+      <span class="status-dot status-running"></span>
+      <span class="text-xs tracking-widest status-label status-running">STATUS: [ RUNNING ]</span>
     </div>
     <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
       Discover your next favorite meal. Unbiased, dish-level recommendations from real eaters. Never eat a disappointing meal again.
@@ -77,8 +77,8 @@ import "../styles/globals.css";
     <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-green">Annai</h2>
     <div class="flex items-center justify-center gap-4 mb-6">
       <span class="text-xs tracking-widest opacity-60">PROJECT 02</span>
-      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
-      <span class="text-xs tracking-widest opacity-60">BUILDING</span>
+      <span class="status-dot status-building"></span>
+      <span class="text-xs tracking-widest status-label status-building">STATUS: [ COMPILING... ]</span>
     </div>
     <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
       Curiosity on your wrist.
@@ -91,8 +91,8 @@ import "../styles/globals.css";
     <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-blue">Nebula</h2>
     <div class="flex items-center justify-center gap-4 mb-6">
       <span class="text-xs tracking-widest opacity-60">PROJECT 03</span>
-      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
-      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+      <span class="status-dot status-running"></span>
+      <span class="text-xs tracking-widest status-label status-running">STATUS: [ RUNNING ]</span>
     </div>
     <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
       Placeholder copy for Nebula. Describe the kind of world, experience, or product you imagine here.
@@ -105,8 +105,8 @@ import "../styles/globals.css";
     <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-red">Cipher</h2>
     <div class="flex items-center justify-center gap-4 mb-6">
       <span class="text-xs tracking-widest opacity-60">PROJECT 04</span>
-      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
-      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+      <span class="status-dot status-running"></span>
+      <span class="text-xs tracking-widest status-label status-running">STATUS: [ RUNNING ]</span>
     </div>
     <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
       Placeholder copy for Cipher. Maybe this is something cryptic, secure, or mysterious—write that story later.
@@ -119,8 +119,8 @@ import "../styles/globals.css";
     <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-orange">Vault</h2>
     <div class="flex items-center justify-center gap-4 mb-6">
       <span class="text-xs tracking-widest opacity-60">PROJECT 05</span>
-      <span class="w-1 h-1 bg-white rounded-full opacity-60"></span>
-      <span class="text-xs tracking-widest opacity-60">LIVE</span>
+      <span class="status-dot status-offline"></span>
+      <span class="text-xs tracking-widest status-label status-offline">STATUS: [ TERMINATED ]</span>
     </div>
     <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
       Placeholder copy for Vault. A safe place for ideas, data, or something entirely different—fill in the details when you are ready.
@@ -593,6 +593,112 @@ import "../styles/globals.css";
     }
     100% {
       border-color: #27272a;
+    }
+  }
+
+  /* Status Indicators */
+  .status-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .status-dot.status-running {
+    background-color: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    animation: statusPulseGreen 2s ease-in-out infinite;
+  }
+
+  .status-dot.status-building {
+    background-color: #eab308;
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    animation: statusFlickerAmber 1.5s ease-in-out infinite;
+  }
+
+  .status-dot.status-offline {
+    background-color: #6b7280;
+    opacity: 0.5;
+  }
+
+  .status-label {
+    transition: all 0.3s ease;
+  }
+
+  .status-label.status-running {
+    color: #22c55e;
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  }
+
+  .status-label.status-building {
+    color: #eab308;
+    animation: statusFlickerText 1.5s ease-in-out infinite;
+  }
+
+  .status-label.status-offline {
+    color: #9ca3af;
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  @keyframes statusPulseGreen {
+    0% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 1);
+    }
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+  }
+
+  @keyframes statusFlickerAmber {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    }
+    10% {
+      opacity: 0.3;
+      box-shadow: 0 0 5px rgba(234, 179, 8, 0.4);
+    }
+    20% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    }
+    30% {
+      opacity: 0.5;
+      box-shadow: 0 0 7px rgba(234, 179, 8, 0.6);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    }
+  }
+
+  @keyframes statusFlickerText {
+    0%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+    }
+    10% {
+      opacity: 0.4;
+      text-shadow: 0 0 4px rgba(234, 179, 8, 0.3);
+    }
+    20% {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+    }
+    30% {
+      opacity: 0.6;
+      text-shadow: 0 0 6px rgba(234, 179, 8, 0.4);
+    }
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
     }
   }
 
