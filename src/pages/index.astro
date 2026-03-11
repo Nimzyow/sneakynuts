@@ -4,8 +4,8 @@ import "../styles/globals.css";
 
 <head>
   <meta charset="UTF-8">
-  <title>SneakyNuts</title>
-  <meta name="description" content="SneakyNuts">
+  <title>SN</title>
+  <meta name="description" content="SN">
   <style>
     html {
       scroll-snap-type: y mandatory;
@@ -37,7 +37,7 @@ import "../styles/globals.css";
 
 <div class="snap-section main-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="0">
   <h1 class="text-5xl md:text-7xl font-semibold tracking-[0.25em] uppercase anomaly-text">
-    SneakyNuts
+    SN
   </h1>
   
   <p class="mt-2 text-sm md:text-base tracking-[0.5em] opacity-60 text-gray-400">
@@ -131,7 +131,7 @@ Diver is a geospatial index of the world's aquatic anomalies. From forgotten shi
   <div class="project-content project-content--fade">
     <div class="terminal-window">
       <div class="terminal-prompt">
-        <span class="terminal-prefix">guest@sneakynuts:~$</span>
+        <span class="terminal-prefix">guest@sn:~$</span>
         <span id="terminal-command" class="typewriter-command"></span>
         <span class="terminal-cursor" id="terminal-cursor">_</span>
       </div>
@@ -140,12 +140,12 @@ Diver is a geospatial index of the world's aquatic anomalies. From forgotten shi
       </div>
       
       <div class="terminal-prompt" style="display: none; margin-top: 1rem;" id="uptime-prompt">
-        <span class="terminal-prefix">guest@sneakynuts:~$</span>
+        <span class="terminal-prefix">guest@sn:~$</span>
         <span id="terminal-command-2" class="typewriter-command"></span>
         <span class="terminal-cursor">_</span>
       </div>
       <div class="terminal-response" id="uptime-response" style="display: none; margin-top: 1rem;">
-        <div>OS: Sneakynuts_v1.0.4</div>
+        <div>OS: SN_v1.0.4</div>
         <div>UPTIME: <span id="uptime-days">742</span> Days</div>
         <div>KERNEL: Anomalous_Build_09</div>
       </div>
@@ -773,14 +773,14 @@ Diver is a geospatial index of the world's aquatic anomalies. From forgotten shi
       function calculateUptimeDays() {
         const startDate = new Date("2024-12-30");
         const today = new Date();
-        const timeDiff = today - startDate;
+        const timeDiff = today.getTime() - startDate.getTime();
         const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         return daysDiff;
       }
 
       const uptimeDaysSpan = document.getElementById("uptime-days");
       if (uptimeDaysSpan) {
-        uptimeDaysSpan.textContent = calculateUptimeDays();
+        uptimeDaysSpan.textContent = String(calculateUptimeDays());
       }
 
       // Update sidebar on scroll
@@ -817,7 +817,7 @@ Diver is a geospatial index of the world's aquatic anomalies. From forgotten shi
               }
               
               // Setup enter key listener if not already done
-              if (terminalPrompt && !terminalPrompt.dataset.interactive) {
+              if (terminalPrompt instanceof HTMLElement && !terminalPrompt.dataset.interactive) {
                 terminalPrompt.dataset.interactive = "true";
                 
                 const terminalCommand2 = document.getElementById("terminal-command-2");

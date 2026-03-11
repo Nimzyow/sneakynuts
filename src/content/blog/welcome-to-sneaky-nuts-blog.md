@@ -1,7 +1,7 @@
 ---
-title: "SneakyNuts Welcome Blog"
+title: "SN Welcome Blog"
 description: "Yea, we created a blog...in 2025!"
-author: "SneakyNuts"
+author: "SN"
 pubDate: 2025-09-05
 tags: ["announcement", "personal", "welcome", "blogging"]
 emoji: "📝"
@@ -20,7 +20,7 @@ However, I know the trend these days is moving towards quick, short and snappy v
 
 Through creating this blog, I do not wish to make it look like I'm turning my back towards the "in" thing nor do I wish to rebel against current media consumption trends. I hope this blog and the upcoming blogs serve as a creative spark that will involve me one day also creating small TikTok videos on the side.
 
-For now though, I intend on blogging my thoughts on a variety of subject matter that interests me or may frustrate me. I expect my fellow colleague who I founded sneakynuts with will do the same also!
+For now though, I intend on blogging my thoughts on a variety of subject matter that interests me or may frustrate me. I expect my fellow colleague who I founded SN with will do the same also!
 
 Subject matter will almost certainly involve technology, video games, work, side projects, general well being, books and novels etc…
 
