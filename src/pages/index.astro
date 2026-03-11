@@ -2,434 +2,876 @@
 import "../styles/globals.css";
 ---
 
----
-title: "Sneaky Nuts - Creative Projects & Blog"
-description: "Two creative minds building cool stuff. Home to Recommends app, upcoming Annai smartwatch app, and our blog about all sorts of things."
----
-
 <head>
   <meta charset="UTF-8">
+  <title>SN</title>
+  <meta name="description" content="SN">
+  <style>
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
-<div class="min-h-screen bg-[var(--color-primary)] overflow-x-hidden">
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] rounded-lg flex items-center justify-center">
-            <span class="text-2xl">🎮</span>
-          </div>
-          <span class="text-2xl font-bold text-white">Sneaky Nuts</span>
-        </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#projects" class="text-white hover:text-[var(--color-accent)] transition-colors">Projects</a>
-          <a href="#about" class="text-white hover:text-[var(--color-accent)] transition-colors">About</a>
-          <a href="/blog" class="text-white hover:text-[var(--color-accent)] transition-colors">Blog</a>
-          <a href="#contact" class="text-white hover:text-[var(--color-accent)] transition-colors">Contact</a>
-        </div>
-        <a href="/blog" class="bg-[var(--color-accent)] text-[var(--color-text-dark)] px-6 py-2 rounded-full font-bold hover:bg-[var(--color-highlight)] transition-all transform hover:scale-105">
-          Read Blog
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Animated Background -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 left-20 w-32 h-32 bg-[var(--color-accent)] rounded-full opacity-20 animate-pulse"></div>
-      <div class="absolute top-40 right-32 w-24 h-24 bg-[var(--color-highlight)] rounded-full opacity-30 animate-bounce"></div>
-      <div class="absolute bottom-32 left-1/3 w-16 h-16 bg-[var(--color-purple)] rounded-full opacity-25 animate-ping"></div>
-      <div class="absolute bottom-20 right-1/4 w-20 h-20 bg-[var(--color-pink)] rounded-full opacity-20 animate-pulse"></div>
-    </div>
-    
-    <!-- Geometric Shapes -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 border-2 border-[var(--color-accent)] rotate-45 animate-spin-slow"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-48 h-48 border-2 border-[var(--color-highlight)] rotate-12 animate-pulse"></div>
-    </div>
-
-    <div class="text-center z-10 max-w-6xl mx-auto px-6">
-      <div class="mb-8">
-        <h1 class="text-7xl md:text-9xl font-black mb-6 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-highlight)] to-[var(--color-purple)] bg-clip-text text-transparent animate-gradient">
-          SNEAKY NUTS
-        </h1>
-        <p class="text-3xl md:text-4xl mb-8 text-white font-light">
-          Two Guys Being <span class="text-[var(--color-accent)] font-bold">Creative</span> and Making Stuff
-        </p>
-      </div>
-      
-      <p class="text-xl md:text-2xl mb-12 text-[var(--color-text-secondary)] max-w-4xl mx-auto leading-relaxed">
-        We build apps, write about our experiences, and share our journey. 
-        From Recommends on the App Store to upcoming smartwatch apps, we're always creating something new.
-      </p>
-      
-      <div class="flex flex-wrap justify-center gap-6 mb-16">
-        <a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="group relative px-10 py-5 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] rounded-full font-bold text-xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[var(--color-accent)]/50">
-          <span class="relative z-10">Try Recommends</span>
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-highlight)] to-[var(--color-accent)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </a>
-        <a href="/blog" class="px-10 py-5 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded-full font-bold text-xl hover:bg-[var(--color-accent)] hover:text-[var(--color-text-dark)] transition-all duration-300 hover:scale-105">
-          Read Our Blog
-        </a>
-      </div>
-
-      <!-- Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-accent)] mb-2">1</div>
-          <div class="text-[var(--color-text-secondary)]">App Live</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-highlight)] mb-2">2</div>
-          <div class="text-[var(--color-text-secondary)]">Creative Minds</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-purple)] mb-2">3+</div>
-          <div class="text-[var(--color-text-secondary)]">Projects</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-[var(--color-pink)] mb-2">∞</div>
-          <div class="text-[var(--color-text-secondary)]">Ideas</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects Section -->
-  <section id="projects" class="py-32 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-          Our <span class="text-[var(--color-accent)]">Projects</span>
-        </h2>
-        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-          The stuff we're building and working on. Some are live, some are coming soon.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 - Recommends -->
-        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-highlight)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="text-6xl mb-6">🍽️</div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Recommends</h3>
-            <p class="text-[var(--color-text-secondary)] mb-6">
-              Community-driven discovery app that helps you find amazing places and experiences. Get honest recommendations on dishes, not just restaurants.
-            </p>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-2">
-                <span class="text-[var(--color-gold)]">★★★★★</span>
-                <span class="text-[var(--color-text-secondary)]">5.0</span>
-              </div>
-              <div class="text-[var(--color-accent)] font-bold">Live on App Store</div>
-            </div>
-            <a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] py-3 rounded-lg font-bold hover:scale-105 transition-transform block text-center">
-              Download Now
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 - Annai -->
-        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-purple)]/20 to-[var(--color-pink)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="text-6xl mb-6">⌚</div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Annai</h3>
-            <p class="text-[var(--color-text-secondary)] mb-6">
-              A smart watch app that's going to be pretty cool. Details coming soon, but we're excited about this one.
-            </p>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-2">
-                <span class="text-[var(--color-text-secondary)]">🚧</span>
-                <span class="text-[var(--color-text-secondary)]">In Development</span>
-              </div>
-              <div class="text-[var(--color-accent)] font-bold">Coming Soon</div>
-            </div>
-            <div class="w-full bg-gradient-to-r from-[var(--color-purple)] to-[var(--color-pink)] text-white py-3 rounded-lg font-bold text-center opacity-75">
-              Details Coming Soon
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 - Game -->
-        <div class="group relative bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-blue)]/20 to-[var(--color-green)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="text-6xl mb-6">🎮</div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Game</h3>
-            <p class="text-[var(--color-text-secondary)] mb-6">
-              We're working on a game, but nothing is ready to announce yet. Stay tuned for updates!
-            </p>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-2">
-                <span class="text-[var(--color-text-secondary)]">🤫</span>
-                <span class="text-[var(--color-text-secondary)]">Top Secret</span>
-              </div>
-              <div class="text-[var(--color-accent)] font-bold">TBA</div>
-            </div>
-            <div class="w-full bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-green)] text-white py-3 rounded-lg font-bold text-center opacity-75">
-              Nothing to Announce Yet
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-32 bg-[var(--color-primary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-            We're <span class="text-[var(--color-accent)]">Sneaky Nuts</span>
-          </h2>
-          <p class="text-xl text-[var(--color-text-secondary)] mb-8 leading-relaxed">
-            Just two creative minds who love building stuff and sharing our journey. 
-            We make apps, write about our experiences, and document the wild ride of being indie creators.
-          </p>
-          <div class="grid grid-cols-2 gap-8 mb-8">
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-accent)] mb-2">2</div>
-              <div class="text-[var(--color-text-secondary)]">Creative Minds</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-highlight)] mb-2">1</div>
-              <div class="text-[var(--color-text-secondary)]">App Live</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-purple)] mb-2">∞</div>
-              <div class="text-[var(--color-text-secondary)]">Ideas</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-[var(--color-pink)] mb-2">0</div>
-              <div class="text-[var(--color-text-secondary)]">Corporate BS</div>
-            </div>
-          </div>
-          <a href="/blog" class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-block">
-            Read Our Story
-          </a>
-        </div>
-        <div class="relative">
-          <!-- Team Photo Mockup -->
-          <div class="relative">
-            <div class="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] p-8 rounded-2xl">
-              <div class="flex justify-center gap-8">
-                <div class="w-24 h-24 bg-[var(--color-purple)] rounded-full flex items-center justify-center text-3xl">👨‍💻</div>
-                <div class="w-24 h-24 bg-[var(--color-pink)] rounded-full flex items-center justify-center text-3xl">👨‍🎨</div>
-              </div>
-              <div class="text-center mt-6">
-                <div class="text-2xl font-bold text-[var(--color-text-dark)]">The Dynamic Duo</div>
-                <div class="text-[var(--color-text-dark)] opacity-80">Two guys being creative and making stuff</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Values Section -->
-  <section class="py-32 bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-          Our <span class="text-[var(--color-accent)]">Values</span>
-        </h2>
-        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-          The principles that guide everything we do. No corporate BS, just real values.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center group">
-          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-4xl">🚫</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-white">No Corporate BS</h3>
-          <p class="text-[var(--color-text-secondary)]">
-            No attendance dashboards, no forced office days, no daily standups at the same time every day. We work when we're productive, not when a calendar says so.
-          </p>
-        </div>
-
-        <div class="text-center group">
-          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-4xl">⚡</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-white">Create, Don't Ask</h3>
-          <p class="text-[var(--color-text-secondary)]">
-            We build stuff instead of seeking permission. No escalating to execs for every idea. If it's good, we make it happen.
-          </p>
-        </div>
-
-        <div class="text-center group">
-          <div class="w-24 h-24 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-4xl">🎨</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-white">Creative Freedom</h3>
-          <p class="text-[var(--color-text-secondary)]">
-            No pigeon-holing, no rigid job descriptions. We're free to innovate, experiment, and create whatever we think is cool.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 text-white">
-          Get In <span class="text-[var(--color-accent)]">Touch</span>
-        </h2>
-        <p class="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-          Want to chat about our projects, share feedback, or just say hi? We're always up for a conversation!
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-16">
-        <div>
-          <div class="space-y-8">
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center">
-                <span class="text-xl">📧</span>
-              </div>
-              <div>
-                <div class="text-white font-bold">Email</div>
-                <div class="text-[var(--color-text-secondary)]">hello@sneakynuts.com</div>
-              </div>
-            </div>
-
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center">
-                <span class="text-xl">🐦</span>
-              </div>
-              <div>
-                <div class="text-white font-bold">Twitter</div>
-                <div class="text-[var(--color-text-secondary)]">@sneakynuts</div>
-              </div>
-            </div>
-
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center">
-                <span class="text-xl">🌍</span>
-              </div>
-              <div>
-                <div class="text-white font-bold">Location</div>
-                <div class="text-[var(--color-text-secondary)]">Wherever we are</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12">
-            <h3 class="text-2xl font-bold mb-6 text-white">Follow Us</h3>
-            <div class="flex space-x-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-highlight)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">🐦</span>
-              </div>
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-pink)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">📘</span>
-              </div>
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-green)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">📷</span>
-              </div>
-              <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-gold)] to-[var(--color-accent)] rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                <span class="text-xl">💼</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] p-8 rounded-2xl">
-          <form class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <input type="text" placeholder="First Name" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
-              <input type="text" placeholder="Last Name" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
-            </div>
-            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors">
-            <textarea placeholder="Your Message" rows="6" class="w-full px-4 py-3 bg-[var(--color-primary)] border border-[var(--color-text-secondary)] rounded-lg text-white placeholder-[var(--color-text-secondary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-none"></textarea>
-            <button class="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] text-[var(--color-text-dark)] py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-16 bg-[var(--color-primary)] border-t border-[var(--color-text-secondary)]/20">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8 mb-12">
-        <div>
-          <div class="flex items-center space-x-2 mb-6">
-            <div class="w-8 h-8 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] rounded-lg flex items-center justify-center">
-              <span class="text-sm">🎮</span>
-            </div>
-            <span class="text-xl font-bold text-white">Sneaky Nuts</span>
-          </div>
-          <p class="text-[var(--color-text-secondary)] text-sm">
-            Two creative minds building cool stuff and sharing our journey. From apps to blog posts, we're always creating something new.
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-bold mb-6 text-white">Projects</h3>
-          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
-            <li><a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="hover:text-[var(--color-accent)] transition-colors">Recommends</a></li>
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Annai (Coming Soon)</a></li>
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Game (TBA)</a></li>
-            <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-bold mb-6 text-white">Company</h3>
-          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
-            <li><a href="#about" class="hover:text-[var(--color-accent)] transition-colors">About Us</a></li>
-            <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-            <li><a href="#contact" class="hover:text-[var(--color-accent)] transition-colors">Contact</a></li>
-            <li><a href="https://apps.apple.com/gb/app/recommends/id6740585961" target="_blank" class="hover:text-[var(--color-accent)] transition-colors">App Store</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-lg font-bold mb-6 text-white">Connect</h3>
-          <ul class="space-y-3 text-[var(--color-text-secondary)] text-sm">
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">Twitter</a></li>
-            <li><a href="#" class="hover:text-[var(--color-accent)] transition-colors">GitHub</a></li>
-            <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">RSS Feed</a></li>
-            <li><a href="#contact" class="hover:text-[var(--color-accent)] transition-colors">Email Us</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="border-t border-[var(--color-text-secondary)]/20 pt-8 text-center">
-        <p class="text-[var(--color-text-secondary)] text-sm">
-          © 2024 Sneaky Nuts. All rights reserved. Two guys being creative and making stuff.
-        </p>
-      </div>
-    </div>
-  </footer>
+<body>
+<div id="boot-sequence" class="boot-sequence hidden">
+  <div class="boot-line">SYSTEM INITIALIZING...</div>
+  <div class="boot-line">LOADING PROJECT SUITE...</div>
+  <div class="boot-line"></div>
+  <div class="boot-bar">
+    <div class="boot-bar-fill"></div>
+  </div>
+  <div class="boot-percentage">100%</div>
 </div>
 
+<div class="sidebar-nav">
+  <div class="sidebar-item active" data-project="0">Home</div>
+  <div class="sidebar-item" data-project="1">01</div>
+  <div class="sidebar-item" data-project="2">02</div>
+  <div class="sidebar-item" data-project="3">03</div>
+  <div class="sidebar-item" data-project="4">04</div>
+  <div class="sidebar-item" data-project="5">05</div>
+  <div class="sidebar-item" data-project="6">WHOAMI</div>
+</div>
+
+<div class="snap-section main-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="0">
+  <h1 class="text-5xl md:text-7xl font-semibold tracking-[0.25em] uppercase anomaly-text">
+    SN
+  </h1>
+  
+  <p class="mt-2 text-sm md:text-base tracking-[0.5em] opacity-60 text-gray-400">
+    Architecting digital anomalies
+  </p>
+
+  <div class="logo-strip">
+    <div class="logo-track">
+      <span class="logo-link glow-purple">Recommends</span>
+      <span class="logo-link glow-green">Annai</span>
+      <span class="logo-link glow-blue">Nebula</span>
+      <span class="logo-link glow-red">Diver</span>
+      <span class="logo-link glow-orange">Flock</span>
+    </div>
+  </div>
+
+  <button id="begin-btn" class="begin-button">BEGIN</button>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="1">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-purple">Recommends</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 01</span>
+      <span class="status-dot status-running"></span>
+      <span class="text-xs tracking-widest status-label status-running">STATUS: [ RUNNING ]</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Discover your next favorite meal. Unbiased, dish-level recommendations from real eaters. Never eat a disappointing meal again.
+    </p>
+    <a href="https://recommends.app/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all">Visit →</a>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="2">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-green">Annai</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 02</span>
+      <span class="status-dot status-building"></span>
+      <span class="text-xs tracking-widest status-label status-building">STATUS: [ COMPILING... ]</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Curiosity on your wrist.
+    </p>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="3">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-blue">Nebula</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 03</span>
+      <span class="status-dot status-offline"></span>
+      <span class="text-xs tracking-widest status-label status-offline">STATUS: [ TERMINATED ]</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Nebula is a high-velocity coordination engine designed for teams that break things. It strips away the bloat of traditional agile and replaces it with a streamlined flow of anomalies. Track, triage, and deploy without ever leaving the flow-state. 
+    </p>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="4">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-red">Diver</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 04</span>
+      <span class="status-dot status-building"></span>
+      <span class="text-xs tracking-widest status-label status-building">STATUS: [ COMPILING... ]</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+Diver is a geospatial index of the world's aquatic anomalies. From forgotten shipwrecks to vibrant shelf ecosystems, it provides real-time coordinates, depth profiles, and visibility data. Don't just dive; execute a precise descent into the unknown.    </p>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="5">
+  <div class="project-content project-content--fade">
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-[0.25em] uppercase mb-6 glow-orange">Flock</h2>
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <span class="text-xs tracking-widest opacity-60">PROJECT 05</span>
+      <span class="status-dot status-building"></span>
+      <span class="text-xs tracking-widest status-label status-building">STATUS: [ COMPILING... ]</span>
+    </div>
+    <p class="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-6">
+      Chat less. Meet more.
+    </p>
+  </div>
+</div>
+
+<div class="snap-section project-section min-h-screen bg-black text-white flex flex-col items-center justify-center text-center" data-section="6">
+  <div class="project-content project-content--fade">
+    <div class="terminal-window">
+      <div class="terminal-prompt">
+        <span class="terminal-prefix">guest@sn:~$</span>
+        <span id="terminal-command" class="typewriter-command"></span>
+        <span class="terminal-cursor" id="terminal-cursor">_</span>
+      </div>
+      <div class="terminal-response" id="whoami-response" style="display: none; margin-top: 1rem;">
+        <div>Two creators architecting digital anomalies. We don't build apps; we deploy deviations. One handles the logic (00001), the other the experience (00002).</div>
+      </div>
+      
+      <div class="terminal-prompt" style="display: none; margin-top: 1rem;" id="uptime-prompt">
+        <span class="terminal-prefix">guest@sn:~$</span>
+        <span id="terminal-command-2" class="typewriter-command"></span>
+        <span class="terminal-cursor">_</span>
+      </div>
+      <div class="terminal-response" id="uptime-response" style="display: none; margin-top: 1rem;">
+        <div>OS: SN_v1.0.4</div>
+        <div>UPTIME: <span id="uptime-days">742</span> Days</div>
+        <div>KERNEL: Anomalous_Build_09</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
 <style>
-  @keyframes gradient {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  .sidebar-nav {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 100;
   }
-  
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 3s ease infinite;
+
+  .sidebar-item {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555555;
+    cursor: pointer;
+    transition: color 200ms ease;
   }
-  
-  .animate-spin-slow {
-    animation: spin 20s linear infinite;
+
+  .sidebar-item:hover {
+    color: #a1a1aa;
+  }
+
+  .sidebar-item.active {
+    color: #ffffff;
+    position: relative;
+  }
+
+  .sidebar-item.active::after {
+    content: "█";
+    display: inline-block;
+    margin-left: 0.3rem;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .project-section {
+    opacity: 1;
+    transition: opacity 300ms ease;
+  }
+
+  .project-content--fade {
+    animation: fadeIn 500ms ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .main-section {
+    min-height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .anomaly-text {
+    position: relative;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 2px;
+    transition: all 600ms ease;
+  }
+
+  .anomaly-text.boot-up {
+    animation: headerBootUp 600ms ease forwards;
+  }
+
+  @keyframes headerBootUp {
+    0% {
+      font-size: inherit;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      font-size: 2rem;
+      opacity: 0.7;
+      transform: translateY(-2rem);
+    }
+  }
+
+  .anomaly-text:hover {
+    animation: glitch-bw 3s infinite;
+  }
+
+  @keyframes glitch-bw {
+    0% { text-shadow: 1.5px 0px 0px rgba(255,255,255,0.6), -1.5px 0px 0px rgba(200,200,200,0.4); transform: translate(0); }
+    20% { text-shadow: -2.5px 0px 0px rgba(255,255,255,0.5), 2.5px 0px 0px rgba(150,150,150,0.5); transform: translate(1.5px, -1px); }
+    40% { text-shadow: 2.5px 0px 1px rgba(180,180,180,0.5), -2.5px 0px 1px rgba(255,255,255,0.4); transform: translate(-1.5px, 1px); }
+    60% { text-shadow: 2px 0.5px 0px rgba(200,200,200,0.45), -2px -0.5px 0px rgba(255,255,255,0.5); transform: translate(1px, -0.5px); }
+    100% { text-shadow: 1.5px 0px 0px rgba(255,255,255,0.6), -1.5px 0px 0px rgba(200,200,200,0.4); transform: translate(0); }
+  }
+
+  .logo-strip {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+  }
+
+  .logo-track {
+    display: inline-flex;
+    gap: 3rem;
+    justify-content: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    animation: logo-marquee 10s linear infinite;
+  }
+
+  .logo-link {
+    opacity: 0.25;
+    transition:
+      color 200ms ease,
+      text-shadow 200ms ease,
+      opacity 200ms ease,
+      transform 200ms ease;
+    cursor: pointer;
+  }
+
+  .logo-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .logo-link.glow-purple:hover {
+    color: #a855f7;
+    text-shadow: 0 0 18px rgba(168, 85, 247, 0.9);
+  }
+
+  h2.glow-purple {
+    color: #a855f7;
+    text-shadow: 0 0 18px rgba(168, 85, 247, 0.9);
+  }
+
+  h2.glow-green {
+    color: #22c55e;
+    text-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+  }
+
+  h2.glow-blue {
+    color: rgb(34, 69, 197);
+    text-shadow: 0 0 18px rgba(34, 80, 197, 0.9);
+  }
+
+  h2.glow-red {
+    color: rgb(197, 34, 45);
+    text-shadow: 0 0 18px rgba(197, 34, 53, 0.9);
+  }
+
+  h2.glow-orange {
+    color: rgb(233, 131, 23);
+    text-shadow: 0 0 18px rgba(197, 86, 34, 0.9);
+  }
+
+  .logo-link.glow-green:hover {
+    color: #22c55e;
+    text-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+  }
+
+  .logo-link.glow-blue:hover {
+    color:rgb(34, 69, 197);
+    text-shadow: 0 0 18px rgba(34, 80, 197, 0.9);
+  }
+
+  .logo-link.glow-red:hover {
+    color:rgb(197, 34, 45);
+    text-shadow: 0 0 18px rgba(197, 34, 53, 0.9);
+  }
+
+    .logo-link.glow-orange:hover {
+    color:rgb(233, 131, 23);
+    text-shadow: 0 0 18px rgba(197, 86, 34, 0.9);
+  }
+
+  .logo-strip:hover .logo-track {
+    animation-play-state: paused;
+  }
+
+  .boot-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-family: monospace;
+    color: #00ff00;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .boot-sequence.hidden {
+    display: none;
+  }
+
+  .boot-line {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    animation: fadeInLine 200ms ease forwards;
+    opacity: 0;
+  }
+
+  .boot-line:nth-child(1) { animation-delay: 0ms; }
+  .boot-line:nth-child(2) { animation-delay: 150ms; }
+  .boot-line:nth-child(3) { animation-delay: 300ms; }
+  .boot-line:nth-child(4) { animation-delay: 450ms; }
+  .boot-line:nth-child(5) { animation-delay: 600ms; }
+
+  @keyframes fadeInLine {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .boot-bar {
+    width: 300px;
+    height: 1rem;
+    border: 1px solid #00ff00;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .boot-bar-fill {
+    height: 100%;
+    background-color: #00ff00;
+    width: 0%;
+    animation: fillBar 800ms ease forwards;
+  }
+
+  @keyframes fillBar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
+  .boot-percentage {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    animation: fadeInLine 200ms ease forwards 900ms;
+    opacity: 0;
+  }
+
+  .terminal-window {
+    font-family: monospace;
+    color: #00ff00;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ff00;
+    padding: 2rem;
+    width: 600px;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .terminal-line {
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .terminal-prompt {
+    letter-spacing: 0.05em;
+    cursor: text;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .terminal-prefix {
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  #terminal-command {
+    font-weight: bold;
+  }
+
+  .typewriter-command {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    flex-shrink: 0;
+  }
+
+  .typewriter-command.typing {
+    animation: typeCommand 1.2s steps(6, end) forwards;
+  }
+
+  @keyframes typeCommand {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 6.5ch;
+    }
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    margin-left: 0.2rem;
+    animation: cursorBlink 1s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes cursorBlink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .terminal-response {
+    word-wrap: break-word;
+    line-height: 1.6;
+    animation: fadeInLine 500ms ease forwards;
+  }
+
+  .typewriter {
+    overflow: hidden;
+    white-space: pre-wrap;
+    border-right: 2px solid #00ff00;
+    animation: none;
+  }
+
+  .typewriter.active {
+    animation: typewriter 2s steps(75, end) forwards;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .begin-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    border: 1px solid #555555;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .begin-button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  }
+
+  .begin-button.hidden {
+    display: none;
+  }
+
+  @keyframes logo-marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .logo-detail {
+    margin-top: 2.5rem;
+    width: fit-content;
+    padding: 0 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 0;
+    opacity: 0;
+    overflow: visible;
+    transform: translateY(8px);
+    border-top: 1px solid #27272a;
+    animation: pulse-border 3s ease-in-out infinite;
+    transition:
+      max-height 300ms ease,
+      opacity 250ms ease,
+      transform 250ms ease;
+    min-width: 200px;
+  }
+
+  @keyframes pulse-border {
+    0% {
+      border-color: #27272a;
+    }
+    50% {
+      border-color: #555555;
+    }
+    100% {
+      border-color: #27272a;
+    }
+  }
+
+  /* Status Indicators */
+  .status-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .status-dot.status-running {
+    background-color: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    animation: statusPulseGreen 2s ease-in-out infinite;
+  }
+
+  .status-dot.status-building {
+    background-color: #eab308;
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    animation: statusFlickerAmber 1.5s ease-in-out infinite;
+  }
+
+  .status-dot.status-offline {
+    background-color: #6b7280;
+    opacity: 0.5;
+  }
+
+  .status-label {
+    transition: all 0.3s ease;
+  }
+
+  .status-label.status-running {
+    color: #22c55e;
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  }
+
+  .status-label.status-building {
+    color: #eab308;
+    animation: statusFlickerText 1.5s ease-in-out infinite;
+  }
+
+  .status-label.status-offline {
+    color: #9ca3af;
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  @keyframes statusPulseGreen {
+    0% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 1);
+    }
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+  }
+
+  @keyframes statusFlickerAmber {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    }
+    10% {
+      opacity: 0.3;
+      box-shadow: 0 0 5px rgba(234, 179, 8, 0.4);
+    }
+    20% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    }
+    30% {
+      opacity: 0.5;
+      box-shadow: 0 0 7px rgba(234, 179, 8, 0.6);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+    }
+  }
+
+  @keyframes statusFlickerText {
+    0%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+    }
+    10% {
+      opacity: 0.4;
+      text-shadow: 0 0 4px rgba(234, 179, 8, 0.3);
+    }
+    20% {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+    }
+    30% {
+      opacity: 0.6;
+      text-shadow: 0 0 6px rgba(234, 179, 8, 0.4);
+    }
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+    }
+  }
+
+  .logo-detail--open {
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .logo-detail__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .logo-detail__body {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
   }
 </style>
+
+<script>
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", () => {
+      const beginBtn = document.getElementById("begin-btn");
+      const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+      if (beginBtn) {
+        beginBtn.addEventListener("click", () => {
+          beginBtn.classList.add("hidden");
+          
+          // Show boot sequence
+          const bootSequence = document.getElementById("boot-sequence");
+          if (bootSequence) {
+            bootSequence.classList.remove("hidden");
+          }
+          
+          // Play boot-up animation on header
+          const header = document.querySelector(".anomaly-text");
+          if (header) {
+            header.classList.add("boot-up");
+          }
+          
+          // Light up the 01 sidebar item
+          sidebarItems.forEach((item) => {
+            item.classList.remove("active");
+          });
+          const project01 = document.querySelector('[data-project="1"]');
+          if (project01) {
+            project01.classList.add("active");
+          }
+          
+          // Hide boot sequence and scroll to first project after 1.2 seconds
+          setTimeout(() => {
+            if (bootSequence) {
+              bootSequence.classList.add("hidden");
+            }
+            const firstProject = document.querySelector('[data-section="1"]');
+            if (firstProject) {
+              firstProject.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 1200);
+        });
+      }
+
+      // Calculate uptime days from 12/30/2024
+      function calculateUptimeDays() {
+        const startDate = new Date("2024-12-30");
+        const today = new Date();
+        const timeDiff = today.getTime() - startDate.getTime();
+        const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        return daysDiff;
+      }
+
+      const uptimeDaysSpan = document.getElementById("uptime-days");
+      if (uptimeDaysSpan) {
+        uptimeDaysSpan.textContent = String(calculateUptimeDays());
+      }
+
+      // Update sidebar on scroll
+      const sections = document.querySelectorAll(".snap-section");
+      const header = document.querySelector(".anomaly-text");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionNum = entry.target.getAttribute("data-section");
+            sidebarItems.forEach((item) => {
+              item.classList.remove("active");
+            });
+            const activeItem = document.querySelector(`[data-project="${sectionNum}"]`);
+            if (activeItem) {
+              activeItem.classList.add("active");
+            }
+            
+            // Reset header size when returning to home
+            if (sectionNum === "0" && header) {
+              header.classList.remove("boot-up");
+            }
+            
+            // Trigger interactive whoami for section 6
+            if (sectionNum === "6") {
+              const terminalCommand = document.getElementById("terminal-command");
+              const whoamiResponse = document.getElementById("whoami-response");
+              const terminalPrompt = document.querySelector(".terminal-prompt");
+              
+              // Auto-start typing when section comes into view
+              if (terminalCommand && !terminalCommand.dataset.started) {
+                terminalCommand.dataset.started = "true";
+                terminalCommand.textContent = "whoami";
+                terminalCommand.classList.add("typing");
+              }
+              
+              // Setup enter key listener if not already done
+              if (terminalPrompt instanceof HTMLElement && !terminalPrompt.dataset.interactive) {
+                terminalPrompt.dataset.interactive = "true";
+                
+                const terminalCommand2 = document.getElementById("terminal-command-2");
+                const uptimePrompt = document.getElementById("uptime-prompt");
+                const uptimeResponse = document.getElementById("uptime-response");
+                
+                document.addEventListener("keydown", function handleTerminalEnter(e) {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    
+                    // First Enter: show whoami response and start uptime
+                    if (whoamiResponse && whoamiResponse.style.display === "none") {
+                      if (terminalCommand) {
+                        terminalCommand.classList.remove("typing");
+                        whoamiResponse.style.display = "block";
+                      }
+                      
+                      // Start typing uptime command
+                      setTimeout(() => {
+                        if (uptimePrompt && terminalCommand2) {
+                          uptimePrompt.style.display = "flex";
+                          terminalCommand2.textContent = "uptime";
+                          terminalCommand2.classList.add("typing");
+                        }
+                      }, 500);
+                    }
+                    // Second Enter: show uptime response
+                    else if (uptimeResponse && uptimeResponse.style.display === "none") {
+                      if (terminalCommand2) {
+                        terminalCommand2.classList.remove("typing");
+                        uptimeResponse.style.display = "block";
+                      }
+                      document.removeEventListener("keydown", handleTerminalEnter);
+                    }
+                  }
+                });
+              }
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach((section) => observer.observe(section));
+
+      // Sidebar navigation
+      sidebarItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const sectionNum = item.getAttribute("data-project");
+          const section = document.querySelector(`[data-section="${sectionNum}"]`);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    });
+  }
+</script>
